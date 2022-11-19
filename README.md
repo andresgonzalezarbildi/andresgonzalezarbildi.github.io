@@ -1,9 +1,9 @@
 # My Portfolio
 a short portfolio website to show some of my work and contact info
 
-**Portfolio:** (https://andresgonzalez.netlify.app/)
+**Portfolio:** (https://andresgonzalez.netlify.app)
 
-![Website gif](http://placecorgi.com/1200/650)
+![Website gif](https://raw.githubusercontent.com/andresgonzalezarbildi/andresgonzalezarbildi.github.io/main/website.gif)
 
 ## How It's Made:
 
