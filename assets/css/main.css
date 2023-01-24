@@ -1792,7 +1792,7 @@ input, select, textarea {
 						.row.gtr-200.gtr-uniform > * {
 							padding-top: 3em;
 						}
-
+		
 		}
 
 /* Box */
@@ -2622,7 +2622,10 @@ input, select, textarea {
 	display: inline-block;
 	position: relative;
 	padding: 5%;
+	object-fit: fit;
 }
+
+
 
 	
 /* List */
@@ -3911,7 +3914,9 @@ input, select, textarea {
 			}
 
 			@media screen and (max-width: 736px) {
-
+				img {
+					width: 100%;
+				}
 				#intro p {
 					font-size: 1em;
 				}
@@ -3925,3 +3930,4 @@ input, select, textarea {
 			}
 
 		}
+
