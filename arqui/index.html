@@ -6,7 +6,6 @@
 <meta name="color-scheme" content="light">
 <title>Arquitectura de Computadoras · Roadmap de examen</title>
 <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
 <div class="app">
@@ -15,13 +14,15 @@
   <nav class="nav" id="mainNav">
     <div class="nav-group-label">Plan personal</div>
     <button class="nav-item" data-section="inicio"><span class="nav-icon">⌂</span>Roadmap</button>
+    <button class="nav-item" data-section="plan"><span class="nav-icon">◫</span>Plan diario</button>
     <button class="nav-item" data-section="simulacro"><span class="nav-icon">◷</span>Simulacro y teoría rápida</button>
+    <button class="nav-item" data-section="piques"><span class="nav-icon">✦</span>Piques y patrones</button>
+    <button class="nav-item" data-section="notas"><span class="nav-icon">✎</span>Notas</button>
     <div class="nav-group-label">Temas</div>
     <button class="nav-item" data-section="temas"><span class="nav-icon">◇</span>Vista general</button>
     <details><summary>◈ Abrir tema</summary><div class="topic-list" id="sidebarTopics"></div></details>
     <div class="nav-group-label">Banco de examen</div>
     <button class="nav-item" data-section="banco"><span class="nav-icon">☷</span>Ejercicios y soluciones</button>
-    <button class="nav-item" data-section="examenes"><span class="nav-icon">▦</span>Temas por examen</button>
     <div class="nav-group-label">Material</div>
     <button class="nav-item" data-section="fuentes"><span class="nav-icon">↗</span>Fuentes</button>
   </nav>
@@ -35,6 +36,7 @@
   <div class="mobile-top"><strong>Arqui · Examen</strong><button id="menuToggle">Menú</button></div>
   <main class="content">
     <section class="section" id="sec-inicio"></section>
+    <section class="section" id="sec-plan"></section>
     <section class="section" id="sec-temas"></section>
     <section class="section" id="sec-habilidades"></section>
     <section class="section" id="sec-teoria"></section>
@@ -42,10 +44,12 @@
     <section class="section" id="sec-talleres"></section>
     <section class="section" id="sec-banco"></section>
     <section class="section" id="sec-explorador"></section>
-    <section class="section" id="sec-examenes"></section>
+    <section class="section" id="sec-examenes" hidden></section>
     <section class="section" id="sec-checklist"></section>
     <section class="section" id="sec-simulacro"></section>
     <section class="section" id="sec-estadisticas"></section>
+    <section class="section" id="sec-piques"></section>
+    <section class="section" id="sec-notas"></section>
     <section class="section" id="sec-fuentes"></section>
   </main>
 </div>
