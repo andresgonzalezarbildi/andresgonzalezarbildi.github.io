@@ -31,11 +31,16 @@ const elements = {
   confirmUpdateButton: document.querySelector("#confirmUpdateButton"),
   restoreInitialButton: document.querySelector("#restoreInitialButton"),
   showAllButton: document.querySelector("#showAllButton"),
+  moveTaskDialog: document.querySelector("#moveTaskDialog"),
+  moveTaskTitle: document.querySelector("#moveTaskTitle"),
+  moveTaskDateSelect: document.querySelector("#moveTaskDateSelect"),
+  confirmMoveTaskButton: document.querySelector("#confirmMoveTaskButton"),
   toast: document.querySelector("#toast"),
   canvas: document.querySelector("#fluidCanvas")
 };
 
 let activeFilter = "all";
+let movingTaskId = null;
 let state = loadState();
 
 function clone(value) {
@@ -182,9 +187,18 @@ function renderSnapshot() {
     minute: "2-digit"
   });
 
+  const manualEdit = snapshot.lastManualEditAt
+    ? ` · último movimiento ${new Date(snapshot.lastManualEditAt).toLocaleString("es-UY", {
+        day: "2-digit",
+        month: "short",
+        hour: "2-digit",
+        minute: "2-digit"
+      })}`
+    : "";
+
   elements.snapshotDescription.textContent =
-    `${snapshot.sourceLabel} · guardada ${created}. ` +
-    "Solo el botón Actualizar desde planes puede reemplazar esta distribución.";
+    `${snapshot.sourceLabel} · guardada ${created}${manualEdit}. ` +
+    "Mover o completar un bloque no redistribuye los demás.";
 }
 
 function renderSummary() {
@@ -263,6 +277,12 @@ function renderCalendar() {
     });
   });
 
+  document.querySelectorAll("[data-move-task-id]").forEach((button) => {
+    button.addEventListener("click", () => {
+      openMoveTaskDialog(button.dataset.moveTaskId);
+    });
+  });
+
   attachFluidInteractions();
 }
 
@@ -270,14 +290,17 @@ function taskHtml(task) {
   const subject = SUBJECTS[task.subject];
   const done = isTaskDone(task.id);
 
+  const canMove = task.kind !== "examen";
+
   return `
-    <label
+    <div
       class="task ${done ? "done" : ""}"
       style="--subject-color:${subject.color}"
     >
       <input
         type="checkbox"
         data-task-id="${escapeHtml(task.id)}"
+        aria-label="Marcar ${escapeHtml(task.title)} como completado"
         ${done ? "checked" : ""}
       >
 
@@ -291,10 +314,107 @@ function taskHtml(task) {
       <span class="task-meta">
         <span class="subject-chip">${subject.label}</span>
         <span>${formatDuration(Number(task.minutes || 0))}</span>
-        <a href="${task.href || subject.href}">Abrir ↗</a>
+        <span class="task-actions">
+          ${canMove ? `
+            <button
+              type="button"
+              class="move-task-button"
+              data-move-task-id="${escapeHtml(task.id)}"
+            >Mover</button>
+          ` : ""}
+          <a href="${task.href || subject.href}">Abrir ↗</a>
+        </span>
       </span>
-    </label>
+    </div>
   `;
+}
+
+function findTaskLocation(taskId) {
+  for (const day of state.snapshot.days) {
+    const taskIndex = day.tasks.findIndex((task) => task.id === taskId);
+
+    if (taskIndex !== -1) {
+      return {
+        day,
+        task: day.tasks[taskIndex],
+        taskIndex
+      };
+    }
+  }
+
+  return null;
+}
+
+function planDateOptions() {
+  const dates = state.snapshot.days
+    .map((day) => day.date)
+    .filter(Boolean)
+    .sort();
+
+  if (!dates.length) return [];
+
+  return isoRange(dates[0], dates[dates.length - 1]);
+}
+
+function dayLoadLabel(date) {
+  const day = state.snapshot.days.find((item) => item.date === date);
+  const taskCount = day?.tasks.length || 0;
+  const minutes = day?.tasks.reduce(
+    (total, task) => total + Number(task.minutes || 0),
+    0
+  ) || 0;
+
+  if (!taskCount) return "sin bloques";
+
+  return `${taskCount} bloque${taskCount === 1 ? "" : "s"} · ${formatDuration(minutes)}`;
+}
+
+function openMoveTaskDialog(taskId) {
+  const location = findTaskLocation(taskId);
+
+  if (!location || location.task.kind === "examen") return;
+
+  movingTaskId = taskId;
+  elements.moveTaskTitle.textContent = location.task.title;
+  elements.moveTaskDateSelect.replaceChildren();
+
+  planDateOptions().forEach((date) => {
+    const option = document.createElement("option");
+    option.value = date;
+    option.textContent = `${dateLabel(date)} — ${dayLoadLabel(date)}`;
+    option.selected = date === location.day.date;
+    elements.moveTaskDateSelect.append(option);
+  });
+
+  elements.moveTaskDialog.showModal();
+  elements.moveTaskDateSelect.focus();
+}
+
+function moveTaskToDate(taskId, targetDate) {
+  const location = findTaskLocation(taskId);
+
+  if (!location || !targetDate || location.day.date === targetDate) {
+    return false;
+  }
+
+  const [task] = location.day.tasks.splice(location.taskIndex, 1);
+  let targetDay = state.snapshot.days.find((day) => day.date === targetDate);
+
+  if (!targetDay) {
+    targetDay = { date: targetDate, tasks: [] };
+    state.snapshot.days.push(targetDay);
+  }
+
+  targetDay.tasks.push(task);
+  state.snapshot.days = state.snapshot.days
+    .filter((day) => day.tasks.length)
+    .sort((a, b) => a.date.localeCompare(b.date));
+  state.snapshot.lastManualEditAt = new Date().toISOString();
+
+  saveState();
+  render();
+  showToast(`Bloque movido al ${shortDateLabel(targetDate)}.`);
+  return true;
 }
 
 function escapeHtml(value = "") {
@@ -605,6 +725,24 @@ elements.restoreInitialButton.addEventListener("click", (event) => {
   event.preventDefault();
   elements.updateDialog.close();
   restoreInitial();
+});
+
+elements.confirmMoveTaskButton.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  const targetDate = elements.moveTaskDateSelect.value;
+  const moved = moveTaskToDate(movingTaskId, targetDate);
+
+  elements.moveTaskDialog.close();
+  movingTaskId = null;
+
+  if (!moved) {
+    showToast("El bloque ya estaba asignado a ese día.");
+  }
+});
+
+elements.moveTaskDialog.addEventListener("close", () => {
+  movingTaskId = null;
 });
 
 render();

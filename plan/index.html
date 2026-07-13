@@ -52,8 +52,8 @@
       </div>
 
       <p class="plan-heading__copy">
-        Esta distribución queda fija. Marcar una tarea modifica solamente
-        su estado; nunca cambia el día asignado.
+        Esta distribución queda fija. Marcar una tarea solo modifica su
+        estado; también podés mover un bloque sin redistribuir los demás.
       </p>
     </header>
 
@@ -141,6 +141,31 @@
         </button>
         <button value="confirm" id="confirmUpdateButton" class="update-button">
           Leer planes y actualizar
+        </button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="update-dialog move-dialog" id="moveTaskDialog">
+    <form method="dialog">
+      <span class="dialog-mark" aria-hidden="true">⇢</span>
+      <h2>Mover bloque</h2>
+      <p class="move-task-title" id="moveTaskTitle"></p>
+
+      <label class="move-date-field" for="moveTaskDateSelect">
+        <span>Nuevo día</span>
+        <select id="moveTaskDateSelect"></select>
+      </label>
+
+      <p class="dialog-warning">
+        Solo se moverá este bloque. El estado de completado y el resto del
+        cronograma se mantendrán sin cambios.
+      </p>
+
+      <div class="dialog-actions">
+        <button value="cancel" class="text-button">Cancelar</button>
+        <button value="confirm" id="confirmMoveTaskButton" class="update-button">
+          Mover bloque
         </button>
       </div>
     </form>
