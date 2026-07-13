@@ -1,20 +1,61 @@
-# My Portfolio
-a short portfolio website to show some of my work and contact info
+# Launcher personal
 
-**Portfolio:** (https://andresgonzalez.netlify.app)
+Esta portada reemplaza el enfoque de portfolio por un panel de acceso a aplicaciones.
 
-![Website gif](https://raw.githubusercontent.com/andresgonzalezarbildi/andresgonzalezarbildi.github.io/main/website.gif)
+## Archivos
 
-## How It's Made:
+- `index.html`
+- `assets/css/dashboard.css`
+- `assets/js/dashboard.js`
+- `favicon.png` (debe copiarse aparte)
 
-**Tech used:** HTML, CSS, JavaScript
-Its just a quick website to show to clients in order to send them my info and give them an idea of what i can offer to them
+## Cómo agregar o cambiar aplicaciones
 
-## Optimizations
-Its not a website made from scratch so it lacks personalization, and it does not reflex what i can accomplish
+Editar el arreglo `APPS` al comienzo de:
 
+`assets/js/dashboard.js`
 
-## Lessons Learned:
+Cada aplicación tiene esta estructura:
 
-NLearned how to work with templates, and learn a ton of tricks from the template itself.
+```js
+{
+  id: "arqui",
+  title: "Arquitectura de Computadoras",
+  description: "Roadmap y herramientas de estudio.",
+  href: "/arqui/",
+  category: "Estudio",
+  icon: "⌁",
+  accent: "#a78bfa",
+  status: "En curso",
+  detail: "Examen: 23 de julio",
+  tags: ["8086", "Roadmap"]
+}
+```
 
+## Prioridad actual
+
+Editar el objeto `PRIORITY` en el mismo archivo:
+
+```js
+const PRIORITY = {
+  title: "Arquitectura de Computadoras",
+  description: "Preparación del examen",
+  date: "2026-07-23T00:00:00-03:00"
+};
+```
+
+## Rutas recomendadas
+
+Cada aplicación debería estar en una carpeta con su propio `index.html`:
+
+```text
+/arqui/index.html
+/so/index.html
+/md2/index.html
+```
+
+De esa manera las rutas `/arqui/`, `/so/` y `/md2/` funcionan directamente.
+
+## Dependencias
+
+No utiliza jQuery, Scrollex, Breakpoints ni Font Awesome.
