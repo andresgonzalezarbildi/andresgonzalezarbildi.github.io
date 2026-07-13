@@ -193,3 +193,30 @@ body.roadmap-home-mode .roadmap-svg{height:100%;min-height:0}
 
 @media(max-width:920px){.plan-setup,.notes-top{grid-template-columns:1fr}.plan-controls{grid-template-columns:1fr 1fr}.plan-controls .btn{grid-column:1/-1}.notes-tools{grid-template-columns:1fr 1fr}.notes-tools .notes-count{grid-column:1/-1}.plan-summary{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.plan-controls,.notes-tools{grid-template-columns:1fr}.plan-summary{grid-template-columns:1fr 1fr}.plan-days,.notes-grid{grid-template-columns:1fr}.plan-day{padding:14px}.notes-card{padding:14px}}
+
+/* =========================================================
+   V8 · Roadmap con flow + sincronización con Plan diario
+   ========================================================= */
+.roadmap-svg-flow .roadmap-background{fill:#071725}
+.roadmap-flow-zone{fill:rgba(42,93,124,.08);stroke:rgba(100,165,203,.11);stroke-width:2;filter:url(#roadmapSoft)}
+.roadmap-flow-zone.zone-1{fill:rgba(129,86,160,.07)}.roadmap-flow-zone.zone-2{fill:rgba(58,132,105,.07)}.roadmap-flow-zone.zone-3{fill:rgba(174,105,73,.065)}
+.roadmap-flow-trail{fill:none;stroke:rgba(78,139,177,.11);stroke-width:27;stroke-linecap:round;stroke-linejoin:round}
+.roadmap-svg-flow .roadmap-main-edge{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:3.4;stroke-dasharray:10 10;animation:roadmap-flow-dash 18s linear infinite}
+.roadmap-svg-flow .roadmap-main-edge.done{stroke-width:4.6;stroke-dasharray:none;animation:none}
+.roadmap-svg-flow .roadmap-branch-edge{fill:none;stroke-linecap:round;stroke-dasharray:3 7;opacity:.78}
+.roadmap-svg-flow .roadmap-branch-edge.done{stroke-dasharray:none;opacity:1}
+@keyframes roadmap-flow-dash{to{stroke-dashoffset:-160}}
+.roadmap-plan-ring{fill:none;stroke:#82d7ff;stroke-width:2;stroke-dasharray:4 5;opacity:.72;animation:roadmap-plan-spin 9s linear infinite;transform-box:fill-box;transform-origin:center}
+.roadmap-skill-node.plan-today .roadmap-plan-ring{stroke:#ffd369;stroke-width:3;opacity:1;filter:url(#roadmapGlow)}
+@keyframes roadmap-plan-spin{to{transform:rotate(360deg)}}
+.roadmap-plan-badge circle{fill:#16394d;stroke:#8edcff;stroke-width:1.5}.roadmap-plan-badge text{fill:#e8f8ff;font-size:10px;font-weight:900}.roadmap-plan-badge.today circle{fill:#6d5720;stroke:#ffd369}.roadmap-plan-badge.today text{fill:#fff4bd}.roadmap-plan-badge.topic-badge circle{fill:#263e53;stroke:#aac9da}
+.roadmap-plan-links{margin-top:20px;padding-top:16px;border-top:1px solid #29485f;display:grid;gap:8px}
+.roadmap-plan-link{display:grid;grid-template-columns:20px 1fr;gap:9px;align-items:start;padding:9px 10px;border:1px solid #31536a;border-radius:11px;background:#0b2030;cursor:pointer}
+.roadmap-plan-link:hover{border-color:#75c7ef;background:#103048}.roadmap-plan-link.done{border-color:#88743b;background:#332e1e}.roadmap-plan-link input{margin-top:3px;accent-color:#ffd369}.roadmap-plan-link span{display:grid;gap:3px}.roadmap-plan-link strong{font-size:.78rem;line-height:1.3}.roadmap-plan-link small{font-size:.68rem;color:#91abba}
+.plan-sync-banner{display:flex;align-items:center;gap:13px;margin:0 0 18px;padding:13px 16px;border:1px solid #8aa9ba;border-radius:15px;background:linear-gradient(100deg,#eef7fa,#f7f1e8);box-shadow:0 8px 24px rgba(32,62,76,.08)}
+.plan-sync-banner>span{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:#173d52;color:#fff;font-size:1.15rem;font-weight:900}.plan-sync-banner div{display:grid;gap:3px}.plan-sync-banner small{color:#596b75}
+.plan-roadmap-progress{display:block;height:5px;margin-top:6px;border-radius:999px;background:#dce7ea;overflow:hidden}.plan-roadmap-progress i{display:block;height:100%;background:var(--day,#3f7f93);border-radius:inherit}.plan-roadmap-caption{color:#68808b!important;font-size:.66rem!important}
+.plan-task-actions button[data-plan-roadmap]{border-color:#3f7f93;background:#edf7fa;color:#17485c}.plan-task-actions button[data-plan-roadmap]:hover{background:#dcedf3}
+.plan-completed-item{display:inline-flex;align-items:stretch}.plan-completed-item>button:first-child{border-radius:999px 0 0 999px}.plan-completed-roadmap{border:1px solid #b8aa78;border-left:0;border-radius:0 999px 999px 0;background:#fff8dc;color:#584b20;padding:0 10px;cursor:pointer}
+@media(prefers-reduced-motion:reduce){.roadmap-svg-flow .roadmap-main-edge,.roadmap-plan-ring{animation:none}}
+@media(max-width:680px){.plan-sync-banner{align-items:flex-start}.roadmap-plan-link{grid-template-columns:22px 1fr}}
