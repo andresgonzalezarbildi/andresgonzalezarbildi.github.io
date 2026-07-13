@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Plataforma interactiva de preparación del examen de Sistemas Operativos">
   <title>Sistemas Operativos · Preparación de examen</title>
-  <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip-link" href="#mainContent">Saltar al contenido</a>
@@ -103,11 +103,10 @@
               <h1>Plan diario</h1>
               <p>La finalización se deriva de los mismos nodos que usa el roadmap.</p>
             </div>
-            <button class="primary-btn" id="regeneratePlanBtn">Regenerar plan</button>
+            <button class="primary-btn" id="regeneratePlanBtn">Reorganizar plan</button>
           </div>
           <div class="plan-settings card" id="planSettings"></div>
           <div class="plan-summary" id="planSummary"></div>
-          <div class="plan-weight-overview card" id="planWeightOverview"></div>
           <div class="plan-days" id="planDays"></div>
         </section>
 
@@ -119,9 +118,16 @@
               <p>Frecuencia histórica, habilidades, progreso y material relacionado.</p>
             </div>
           </div>
+          <div class="topics-selector card">
+            <label class="field topic-selector-field">
+              <span>Seleccionar tema</span>
+              <select id="topicSelector"></select>
+            </label>
+            <div class="selected-topic-heading" id="selectedTopicHeading"></div>
+          </div>
           <div class="topics-layout">
-            <div class="topics-overview" id="topicsOverview"></div>
-            <aside class="topic-detail card" id="topicDetail"></aside>
+            <section class="topic-detail card" id="topicDetail"></section>
+            <aside class="topics-overview card" id="topicsOverview" aria-label="Ejercicios por tema"></aside>
           </div>
         </section>
 
