@@ -3,159 +3,111 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Acceso a aplicaciones personales, herramientas y plataformas de estudio.">
-  <meta name="theme-color" content="#171525">
+  <meta name="theme-color" content="#080318">
+  <meta
+    name="description"
+    content="Portal personal de aplicaciones, herramientas y material de estudio."
+  >
 
-  <title>Mis herramientas</title>
+  <title>Portal personal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,430;9..144,560;9..144,680&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="assets/css/dashboard.css">
-  <script src="assets/js/dashboard.js" defer></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/app.js" defer></script>
 </head>
 
 <body>
+  <canvas id="fluidCanvas" aria-hidden="true"></canvas>
+  <div class="atmosphere" aria-hidden="true"></div>
+
   <header class="topbar">
     <a class="brand" href="/" aria-label="Ir al inicio">
-      <span class="brand__mark">AG</span>
+      <span class="brand__signal" aria-hidden="true"></span>
       <span>
-        <strong>Mis herramientas</strong>
-        <small>Estudio y uso personal</small>
+        <strong>Portal personal</strong>
+        <small id="totalApps">0 accesos</small>
       </span>
     </a>
 
-    <button
-      class="icon-button"
-      id="themeToggle"
-      type="button"
-      aria-label="Cambiar tema"
-      title="Cambiar tema"
-    >
-      <span aria-hidden="true">◐</span>
-    </button>
+    <label class="searchbar">
+      <span aria-hidden="true">⌕</span>
+      <input
+        id="searchInput"
+        type="search"
+        placeholder="Buscar..."
+        autocomplete="off"
+      >
+      <kbd>/</kbd>
+    </label>
   </header>
 
-  <main class="page-shell">
-    <section class="hero" aria-labelledby="pageTitle">
-      <div>
-        <p class="eyebrow">Panel personal</p>
-        <h1 id="pageTitle">¿Qué querés abrir?</h1>
-        <p class="hero__description">
-          Acceso rápido a roadmaps, bancos de ejercicios y herramientas personales.
-        </p>
-      </div>
+  <main class="shell">
+    <nav class="quick-nav" id="quickNav" aria-label="Navegación por grupos"></nav>
 
-      <article class="priority-card" id="priorityCard">
-        <div>
-          <span class="priority-card__label">Prioridad actual</span>
-          <h2 id="priorityTitle">Arquitectura de Computadoras</h2>
-          <p id="priorityDescription">Preparación del examen</p>
-        </div>
-
-        <div class="priority-card__footer">
-          <strong id="priorityDays">—</strong>
-          <span id="priorityDate">23 de julio</span>
-        </div>
-      </article>
+    <section class="results-bar">
+      <p id="resultLabel">Mostrando todo</p>
+      <button class="clear-search" id="clearSearch" type="button" hidden>
+        Limpiar
+      </button>
     </section>
 
-    <section class="controls" aria-label="Buscar y filtrar aplicaciones">
-      <label class="search">
-        <span class="visually-hidden">Buscar aplicación</span>
-        <span class="search__icon" aria-hidden="true">⌕</span>
-        <input
-          id="searchInput"
-          type="search"
-          placeholder="Buscar materia, roadmap o herramienta..."
-          autocomplete="off"
-        >
-        <kbd>/</kbd>
-      </label>
+    <section id="groupRoot" class="groups"></section>
 
-      <nav class="filters" id="categoryFilters" aria-label="Categorías"></nav>
+    <section class="empty-state" id="emptyState" hidden>
+      <strong>No encontré resultados.</strong>
+      <p>Probá con otra palabra.</p>
     </section>
 
-    <section id="recentSection" class="app-section" hidden>
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Acceso rápido</p>
-          <h2>Recientes</h2>
-        </div>
-        <button class="text-button" id="clearRecent" type="button">Limpiar</button>
-      </div>
+    <section class="personal-links" aria-labelledby="personalLinksTitle">
+      <header class="personal-links__header">
+        <span>Enlaces</span>
+        <h2 id="personalLinksTitle">Dónde encontrarme</h2>
+      </header>
 
-      <div class="app-grid app-grid--compact" id="recentGrid"></div>
-    </section>
-
-    <section id="favoriteSection" class="app-section" hidden>
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Tus accesos</p>
-          <h2>Favoritas</h2>
-        </div>
-      </div>
-
-      <div class="app-grid app-grid--compact" id="favoriteGrid"></div>
-    </section>
-
-    <section class="app-section" aria-labelledby="allAppsTitle">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Aplicaciones</p>
-          <h2 id="allAppsTitle">Todas las herramientas</h2>
-        </div>
-
-        <span class="result-count" id="resultCount"></span>
-      </div>
-
-      <div class="app-grid" id="appGrid"></div>
-
-      <div class="empty-state" id="emptyState" hidden>
-        <span aria-hidden="true">⌕</span>
-        <h3>No encontré aplicaciones</h3>
-        <p>Probá con otro nombre, tema o categoría.</p>
-      </div>
+      <div class="personal-links__stream" id="personalLinks"></div>
     </section>
   </main>
 
-  <footer class="footer">
-    <span>Panel de aplicaciones personales</span>
-    <button class="text-button" id="resetPreferences" type="button">
-      Restablecer preferencias
-    </button>
-  </footer>
+  <template id="groupTemplate">
+    <section class="group">
+      <header class="group__header">
+        <span class="group__index"></span>
 
-  <template id="appCardTemplate">
-    <article class="app-card">
-      <a class="app-card__link" href="#">
-        <div class="app-card__top">
-          <span class="app-card__icon" aria-hidden="true"></span>
-
-          <button
-            class="favorite-button"
-            type="button"
-            aria-label="Agregar a favoritas"
-            title="Agregar a favoritas"
-          >
-            <span aria-hidden="true">☆</span>
-          </button>
+        <div>
+          <p class="group__eyebrow"></p>
+          <h2 class="group__title"></h2>
         </div>
 
-        <div class="app-card__content">
-          <div class="app-card__meta">
-            <span class="app-card__category"></span>
-            <span class="app-card__status"></span>
-          </div>
+        <p class="group__description"></p>
+      </header>
 
-          <h3 class="app-card__title"></h3>
-          <p class="app-card__description"></p>
-          <div class="app-card__tags"></div>
-        </div>
+      <div class="app-stream"></div>
+    </section>
+  </template>
 
-        <div class="app-card__bottom">
-          <span class="app-card__detail"></span>
-          <span class="app-card__arrow" aria-hidden="true">↗</span>
-        </div>
-      </a>
+  <template id="cardTemplate">
+    <article class="portal-card">
+      <span class="portal-card__flare" aria-hidden="true"></span>
+
+      <div class="portal-card__side">
+        <span class="portal-card__index"></span>
+        <span class="portal-card__icon"></span>
+      </div>
+
+      <div class="portal-card__body">
+        <div class="portal-card__tags"></div>
+        <h3 class="portal-card__title"></h3>
+        <p class="portal-card__description"></p>
+      </div>
+
+      <div class="portal-card__actions"></div>
     </article>
   </template>
 </body>

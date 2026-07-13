@@ -1,61 +1,67 @@
-# Launcher personal
+# Portal personal — versión líquida v4
 
-Esta portada reemplaza el enfoque de portfolio por un panel de acceso a aplicaciones.
+## Cambios
+
+- Fondo renderizado internamente a menor resolución y escalado por CSS.
+- Se eliminaron los desenfoques grandes por fotograma.
+- Las corrientes usan menos puntos y curvas cuadráticas.
+- El movimiento se mantiene constante.
+- Al pasar por una aplicación:
+  - las corrientes aceleran;
+  - se deforman alrededor del cursor;
+  - vuelven gradualmente al movimiento normal.
+- Se agregaron enlaces personales:
+  - GitHub
+  - LinkedIn
+  - CV reciente en inglés
+- Se agregaron:
+  - EventosUy
+  - GameOrTask
+  - carlonchoStars
+  - PruebaFight
+- Ningún repositorio tiene botón de descarga.
+
+## carlonchoStars
+
+La portada enlaza el repositorio, pero no modifica ese proyecto.
+
+Para rediseñarlo hace falta subir el repositorio como ZIP o adjuntar sus archivos
+HTML, CSS, JavaScript e imágenes. Así se puede modificar sin inventar su
+estructura ni romper su funcionamiento.
+
+## Editar aplicaciones
+
+Todo está en:
+
+```text
+assets/js/app.js
+```
+
+- `LIBRARY`: grupos y proyectos.
+- `PERSONAL_LINKS`: GitHub, LinkedIn, CV u otros enlaces.
 
 ## Archivos
 
-- `index.html`
-- `assets/css/dashboard.css`
-- `assets/js/dashboard.js`
-- `favicon.png` (debe copiarse aparte)
-
-## Cómo agregar o cambiar aplicaciones
-
-Editar el arreglo `APPS` al comienzo de:
-
-`assets/js/dashboard.js`
-
-Cada aplicación tiene esta estructura:
-
-```js
-{
-  id: "arqui",
-  title: "Arquitectura de Computadoras",
-  description: "Roadmap y herramientas de estudio.",
-  href: "/arqui/",
-  category: "Estudio",
-  icon: "⌁",
-  accent: "#a78bfa",
-  status: "En curso",
-  detail: "Examen: 23 de julio",
-  tags: ["8086", "Roadmap"]
-}
-```
-
-## Prioridad actual
-
-Editar el objeto `PRIORITY` en el mismo archivo:
-
-```js
-const PRIORITY = {
-  title: "Arquitectura de Computadoras",
-  description: "Preparación del examen",
-  date: "2026-07-23T00:00:00-03:00"
-};
-```
-
-## Rutas recomendadas
-
-Cada aplicación debería estar en una carpeta con su propio `index.html`:
-
 ```text
-/arqui/index.html
-/so/index.html
-/md2/index.html
+index.html
+assets/css/style.css
+assets/js/app.js
+favicon.png
 ```
 
-De esa manera las rutas `/arqui/`, `/so/` y `/md2/` funcionan directamente.
 
-## Dependencias
+## Versión v5 — fondo marmolado
 
-No utiliza jQuery, Scrollex, Breakpoints ni Font Awesome.
+- Se reemplazaron las cuatro bandas anchas por seis cintas entrelazadas.
+- Cada cinta tiene varias vetas internas y filamentos finos.
+- Se agregaron remolinos localizados para acercarse al aspecto de pintura fluida.
+- El movimiento normal es más lento y continuo.
+- El hover modifica suavemente la curvatura, sin sustituir la animación propia.
+- Se mantiene el renderizado a resolución reducida y no se usan desenfoques por fotograma.
+
+
+## Versión v6
+
+- El fondo tiene una difusión suave aplicada por CSS para mezclar las vetas como líquido y humo.
+- Se mantiene el renderizado optimizado de la versión anterior.
+- carlonchoStars incluye acceso directo a la versión jugable y al repositorio.
