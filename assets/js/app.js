@@ -224,10 +224,17 @@ function renderQuickNav(groups) {
     elements.quickNav.append(link);
   });
 
+  const planLink = document.createElement("a");
+  planLink.href = "/plan/";
+  planLink.textContent = "Plan unificado";
+  planLink.dataset.index = String(groups.length + 1).padStart(2, "0");
+  planLink.style.setProperty("--nav-color", "#ff8b2c");
+  elements.quickNav.append(planLink);
+
   const personalLink = document.createElement("a");
   personalLink.href = "#personal-links";
   personalLink.textContent = "Enlaces";
-  personalLink.dataset.index = String(groups.length + 1).padStart(2, "0");
+  personalLink.dataset.index = String(groups.length + 2).padStart(2, "0");
   personalLink.style.setProperty("--nav-color", "#d8ff56");
   elements.quickNav.append(personalLink);
 

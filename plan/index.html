@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070313">
+  <meta
+    name="description"
+    content="Calendario unificado de Arquitectura de Computadoras y Sistemas Operativos."
+  >
+
+  <title>Plan unificado</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,430;9..144,560;9..144,680&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <canvas id="fluidCanvas" aria-hidden="true"></canvas>
+  <div class="atmosphere" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="back-link" href="/">
+      <span aria-hidden="true">←</span>
+      Portal personal
+    </a>
+
+    <div class="topbar__actions">
+      <button class="text-button" id="showAllButton" type="button">
+        Mostrar todo
+      </button>
+
+      <button class="update-button" id="updatePlanButton" type="button">
+        <span aria-hidden="true">↻</span>
+        Actualizar desde planes
+      </button>
+    </div>
+  </header>
+
+  <main class="shell">
+    <header class="plan-heading">
+      <div>
+        <p>Arquitectura + Sistemas Operativos</p>
+        <h1>Plan unificado</h1>
+      </div>
+
+      <p class="plan-heading__copy">
+        Esta distribución queda fija. Marcar una tarea modifica solamente
+        su estado; nunca cambia el día asignado.
+      </p>
+    </header>
+
+    <section class="snapshot-note" id="snapshotNote">
+      <span aria-hidden="true">▣</span>
+      <div>
+        <strong>Instantánea independiente</strong>
+        <p id="snapshotDescription"></p>
+      </div>
+    </section>
+
+    <section class="exam-strip">
+      <article class="exam-card exam-card--arqui">
+        <span>23 JUL</span>
+        <div>
+          <small>Primer examen</small>
+          <strong>Arquitectura</strong>
+        </div>
+        <a href="/arqui/">Abrir ↗</a>
+      </article>
+
+      <article class="exam-card exam-card--so">
+        <span>29 JUL</span>
+        <div>
+          <small>Segundo examen</small>
+          <strong>Sistemas Operativos</strong>
+        </div>
+        <a href="/so/">Abrir ↗</a>
+      </article>
+    </section>
+
+    <section class="summary" aria-label="Resumen del plan">
+      <article>
+        <strong id="completedCount">0/0</strong>
+        <span>bloques completados</span>
+      </article>
+
+      <article>
+        <strong id="remainingMinutes">0 h</strong>
+        <span>carga pendiente estimada</span>
+      </article>
+
+      <article>
+        <strong id="todayCount">0</strong>
+        <span>bloques para hoy</span>
+      </article>
+
+      <div class="summary__progress">
+        <span id="progressBar"></span>
+      </div>
+    </section>
+
+    <nav class="filters" aria-label="Filtros del calendario">
+      <button type="button" data-filter="all" class="active">Todo</button>
+      <button type="button" data-filter="today">Hoy</button>
+      <button type="button" data-filter="pending">Pendiente</button>
+      <button type="button" data-filter="arqui">Arquitectura</button>
+      <button type="button" data-filter="so">Sistemas Operativos</button>
+    </nav>
+
+    <section class="calendar" id="calendar"></section>
+
+    <section class="empty-state" id="emptyState" hidden>
+      No hay bloques para este filtro.
+    </section>
+  </main>
+
+  <dialog class="update-dialog" id="updateDialog">
+    <form method="dialog">
+      <span class="dialog-mark" aria-hidden="true">↻</span>
+      <h2>Actualizar el plan unificado</h2>
+      <p>
+        Se leerán los planes guardados por las páginas de Arquitectura y
+        Sistemas Operativos en este navegador. Recién entonces se creará
+        una distribución nueva.
+      </p>
+      <p class="dialog-warning">
+        Los bloques que mantengan el mismo identificador conservarán su
+        marca de completado. Las fechas sí pueden cambiar.
+      </p>
+      <div class="dialog-actions">
+        <button value="cancel" class="text-button">Cancelar</button>
+        <button value="default" id="restoreInitialButton" class="text-button">
+          Restaurar versión inicial
+        </button>
+        <button value="confirm" id="confirmUpdateButton" class="update-button">
+          Leer planes y actualizar
+        </button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
