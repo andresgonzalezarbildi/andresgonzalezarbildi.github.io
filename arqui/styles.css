@@ -233,3 +233,12 @@ body.roadmap-home-mode .roadmap-svg{height:100%;min-height:0}
 .plan-priority-badge{display:inline-flex;align-items:center;width:max-content;max-width:100%;margin-top:7px;border-radius:999px;padding:4px 8px;font-size:.69rem;font-weight:850;letter-spacing:.015em;border:1px solid transparent}
 .plan-priority-badge.alta{background:#fff0eb;border-color:#e7a08f;color:#9a3828}.plan-priority-badge.media{background:#eef6f1;border-color:#8fbea4;color:#2c6b4d}.plan-priority-badge.baja{background:#f1eee8;border-color:#c9c0b4;color:#645e55}.plan-priority-badge.integral{background:#edf3f7;border-color:#9db7c5;color:#31586c}
 @media(max-width:620px){.plan-frequency-head{display:grid}.plan-frequency-head>span{justify-self:start}.plan-frequency-row{grid-template-columns:1fr}.plan-frequency-track{width:100%}}
+
+/* V11 · plan por fecha exacta y distribución equilibrada */
+.plan-summary{grid-template-columns:repeat(5,minmax(110px,1fr))}
+.plan-frequency-head small{display:block;max-width:850px;margin-top:7px;color:var(--muted);line-height:1.45}
+.plan-frequency-row{grid-template-columns:minmax(0,1fr) 110px 44px}
+.plan-frequency-row>b{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink)}
+.plan-day-badge{font-variant-numeric:tabular-nums}
+@media(max-width:1080px){.plan-summary{grid-template-columns:repeat(3,minmax(110px,1fr))}}
+@media(max-width:720px){.plan-summary{grid-template-columns:1fr 1fr}.plan-frequency-row{grid-template-columns:1fr}.plan-frequency-row>b{text-align:left}}
