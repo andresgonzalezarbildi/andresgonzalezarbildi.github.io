@@ -698,6 +698,7 @@ button {
 }
 
 .move-date-field select,
+.move-date-field input,
 .form-field input,
 .form-field select {
   width: 100%;
@@ -711,8 +712,19 @@ button {
 }
 
 .move-date-field select,
+.move-date-field input,
 .form-field select {
   cursor: pointer;
+}
+
+.move-date-field input[type="date"] {
+  color-scheme: dark;
+}
+
+.update-start-field small {
+  color: var(--muted);
+  font-size: 0.61rem;
+  line-height: 1.5;
 }
 
 .task-form-grid {

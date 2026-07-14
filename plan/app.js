@@ -6,6 +6,12 @@ const ARQUI_STORAGE_KEY = "arqui_exam_dashboard_v3";
 const SO_STORAGE_KEY = "studyDashboard_sistemas_operativos_v1";
 const PLAN_START_DATE = "2026-07-12";
 const PLAN_END_DATE = "2026-07-29";
+const ARQUI_EXAM_DATE = "2026-07-23";
+const SO_EXAM_DATE = "2026-07-29";
+const DAILY_TARGET_MINUTES = 330;
+const DAILY_SOFT_LIMIT_MINUTES = 360;
+const DAILY_HARD_LIMIT_MINUTES = 390;
+const DAILY_MAX_BLOCKS = 5;
 
 const SUBJECTS = {
   arqui: {
@@ -86,7 +92,7 @@ const elements = {
   deleteTaskDialog: document.querySelector("#deleteTaskDialog"),
   deleteTaskTitle: document.querySelector("#deleteTaskTitle"),
   confirmDeleteTaskButton: document.querySelector("#confirmDeleteTaskButton"),
-  updateFromDate: document.querySelector("#updateFromDate"),
+  updateStartDate: document.querySelector("#updateStartDate"),
   deletedSection: document.querySelector("#deletedSection"),
   deletedCount: document.querySelector("#deletedCount"),
   deletedTasks: document.querySelector("#deletedTasks"),
@@ -769,6 +775,12 @@ function sourceArquiTask(sourceId) {
     kind: module.kind,
     sourceDate: "",
     href: "/arqui/",
+    phase: Number(module.phase || 99),
+    weight: Number(module.weight || 1),
+    topic: module.topic || "",
+    order: EMBEDDED_SOURCES.arquiModules.findIndex(
+      (item) => item.sourceId === sourceId
+    ),
     details: ARQUI_TASK_SUMMARIES[`arqui:${sourceId}`] ||
       "Completar la actividad y verificar el procedimiento."
   };
@@ -850,86 +862,394 @@ function isoRange(start, end) {
   return dates;
 }
 
-function rebuildFromCurrentSources() {
-  const cutoff = todayISO();
-  const updateStart = cutoff < PLAN_START_DATE ? PLAN_START_DATE : cutoff;
-  const manualTasks = state.snapshot.days.flatMap((day) =>
-    day.date >= updateStart
-      ? day.tasks
-          .filter((task) => task.manual)
-          .map((task) => ({ ...clone(task), manualDate: day.date }))
-      : []
-  );
-  const arquiDays = readArquiDays();
-  const soTasks = readSoTasks();
-  const dates = updateStart <= PLAN_END_DATE
-    ? isoRange(updateStart, PLAN_END_DATE)
-    : [];
-  const buckets = Object.fromEntries(
-    dates.map((date) => [date, []])
-  );
+function addDaysISO(iso, amount) {
+  const date = dateParts(iso);
+  date.setDate(date.getDate() + amount);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
 
-  arquiDays.forEach((day) => {
-    day.tasks.forEach((task) => {
-      if (!task || state.deleted[task.id]) return;
+function taskMinutes(task) {
+  return Number(task?.minutes || 0);
+}
 
-      const targetDate = day.date < updateStart ? updateStart : day.date;
-      if (targetDate > PLAN_END_DATE) return;
-      if (!buckets[targetDate]) buckets[targetDate] = [];
+function tasksMinutes(tasks) {
+  return tasks.reduce((total, task) => total + taskMinutes(task), 0);
+}
 
-      buckets[targetDate].push({
-        ...task,
-        sourceDate: day.date
-      });
-    });
-  });
+function uniqueAvailableTasks(tasks) {
+  const seen = new Set();
 
-  const capacity = 340;
-  let lastAssigned = updateStart;
-
-  soTasks.forEach((task) => {
-    if (state.deleted[task.id]) return;
-
-    const sourceDate = task.sourceDate || updateStart;
-    const earliest = [sourceDate, lastAssigned, updateStart]
-      .sort()
-      .at(-1);
-    const candidates = dates.filter(
-      (date) =>
-        date >= earliest &&
-        date < PLAN_END_DATE &&
-        date !== "2026-07-23"
-    );
-
-    let selected = candidates.find((date) => {
-      const currentMinutes = buckets[date].reduce(
-        (total, item) => total + Number(item.minutes || 0),
-        0
-      );
-
-      return currentMinutes + task.minutes <= capacity;
-    });
-
-    if (!selected) {
-      selected = candidates
-        .map((date) => ({
-          date,
-          load: buckets[date].reduce(
-            (total, item) => total + Number(item.minutes || 0),
-            0
-          )
-        }))
-        .sort((a, b) => a.load - b.load)[0]?.date;
+  return tasks.filter((task) => {
+    if (!task?.id || seen.has(task.id) || state.deleted[task.id]) {
+      return false;
     }
 
-    selected ||= dates.find((date) => date < PLAN_END_DATE) || PLAN_END_DATE;
-    if (!buckets[selected]) buckets[selected] = [];
-    buckets[selected].push(task);
-    lastAssigned = selected;
+    seen.add(task.id);
+    return true;
+  });
+}
+
+function currentManualTasks() {
+  return state.snapshot.days.flatMap((day, dayIndex) =>
+    day.tasks
+      .filter((task) => task.manual && !state.deleted[task.id])
+      .map((task, taskIndex) => ({
+        ...clone(task),
+        sourceDate: task.sourceDate || day.date,
+        previousDate: day.date,
+        order: 10000 + dayIndex * 100 + taskIndex,
+        phase: task.subject === "arqui" ? 8.5 : 99,
+        weight: 1
+      }))
+  );
+}
+
+function orderedArquiTasks(arquiDays, manualTasks) {
+  const imported = arquiDays.flatMap((day, dayIndex) =>
+    day.tasks.map((task, taskIndex) => ({
+      ...task,
+      sourceDate: task.sourceDate || day.date,
+      order: Number.isFinite(Number(task.order))
+        ? Number(task.order)
+        : dayIndex * 100 + taskIndex,
+      phase: Number(task.phase || 99),
+      weight: Number(task.weight || 1)
+    }))
+  );
+
+  return uniqueAvailableTasks([
+    ...imported,
+    ...manualTasks.filter((task) => task.subject === "arqui")
+  ]).sort((a, b) =>
+    Number(a.phase || 99) - Number(b.phase || 99) ||
+    Number(b.weight || 1) - Number(a.weight || 1) ||
+    Number(a.order || 0) - Number(b.order || 0)
+  );
+}
+
+function orderedSoTasks(soTasks, manualTasks) {
+  return uniqueAvailableTasks([
+    ...soTasks,
+    ...manualTasks.filter((task) => task.subject === "so")
+  ]).sort((a, b) =>
+    Number(a.order || 0) - Number(b.order || 0) ||
+    String(a.sourceDate || "").localeCompare(String(b.sourceDate || ""))
+  );
+}
+
+function emptyBuckets(dates) {
+  return Object.fromEntries(dates.map((date) => [date, []]));
+}
+
+function cloneBuckets(buckets) {
+  return Object.fromEntries(
+    Object.entries(buckets).map(([date, tasks]) => [date, [...tasks]])
+  );
+}
+
+function bucketLoad(buckets, date) {
+  return tasksMinutes(buckets[date] || []);
+}
+
+function partitionOrderedTasks(tasks, dates, fixedBuckets) {
+  if (!dates.length) {
+    return tasks.length ? null : { cost: 0, cuts: [], loads: [] };
+  }
+
+  const taskCount = tasks.length;
+  const fixedCount = dates.reduce(
+    (total, date) => total + (fixedBuckets[date]?.length || 0),
+    0
+  );
+  const effectiveMaxBlocks = Math.max(
+    DAILY_MAX_BLOCKS,
+    Math.ceil((taskCount + fixedCount) / dates.length)
+  );
+  const prefixMinutes = [0];
+
+  tasks.forEach((task) => {
+    prefixMinutes.push(prefixMinutes[prefixMinutes.length - 1] + taskMinutes(task));
   });
 
-  if ("2026-07-23" >= updateStart && "2026-07-23" <= PLAN_END_DATE) {
-    buckets["2026-07-23"] = [
+  const fixedMinutes = dates.reduce(
+    (total, date) => total + bucketLoad(fixedBuckets, date),
+    0
+  );
+  const averageMinutes = (fixedMinutes + prefixMinutes[taskCount]) / dates.length;
+  const targetMinutes = Math.min(
+    DAILY_SOFT_LIMIT_MINUTES,
+    Math.max(180, averageMinutes || DAILY_TARGET_MINUTES)
+  );
+  const memo = new Map();
+
+  function solve(dayIndex, taskIndex) {
+    const key = `${dayIndex}:${taskIndex}`;
+    if (memo.has(key)) return memo.get(key);
+
+    if (dayIndex === dates.length) {
+      const result = taskIndex === taskCount
+        ? { cost: 0, cuts: [], loads: [] }
+        : null;
+      memo.set(key, result);
+      return result;
+    }
+
+    const date = dates[dayIndex];
+    const fixedTasks = fixedBuckets[date] || [];
+    const fixedDayMinutes = tasksMinutes(fixedTasks);
+    const remainingDays = dates.length - dayIndex - 1;
+    const futureCapacity = dates
+      .slice(dayIndex + 1)
+      .reduce(
+        (total, futureDate) =>
+          total + Math.max(
+            0,
+            effectiveMaxBlocks - (fixedBuckets[futureDate]?.length || 0)
+          ),
+        0
+      );
+    const minimumTake = Math.max(0, taskCount - taskIndex - futureCapacity);
+    const maximumTake = Math.min(
+      taskCount - taskIndex,
+      Math.max(0, effectiveMaxBlocks - fixedTasks.length)
+    );
+    let best = null;
+
+    for (let take = minimumTake; take <= maximumTake; take += 1) {
+      const assignedMinutes =
+        prefixMinutes[taskIndex + take] - prefixMinutes[taskIndex];
+      const load = fixedDayMinutes + assignedMinutes;
+      const blockCount = fixedTasks.length + take;
+      const deviation = load - targetMinutes;
+      const softOverflow = Math.max(0, load - DAILY_SOFT_LIMIT_MINUTES);
+      const hardOverflow = Math.max(0, load - DAILY_HARD_LIMIT_MINUTES);
+      const blockOverflow = Math.max(0, blockCount - DAILY_MAX_BLOCKS);
+      let dayCost = deviation * deviation;
+
+      dayCost += softOverflow * softOverflow * 12;
+      dayCost += hardOverflow * hardOverflow * 180;
+      dayCost += blockOverflow * blockOverflow * 25000;
+
+      if (
+        taskCount >= dates.length &&
+        blockCount === 0 &&
+        remainingDays > 0
+      ) {
+        dayCost += targetMinutes * targetMinutes * 0.4;
+      }
+
+      const next = solve(dayIndex + 1, taskIndex + take);
+      if (!next) continue;
+
+      const candidate = {
+        cost: dayCost + next.cost,
+        cuts: [take, ...next.cuts],
+        loads: [load, ...next.loads]
+      };
+
+      if (!best || candidate.cost < best.cost) {
+        best = candidate;
+      }
+    }
+
+    memo.set(key, best);
+    return best;
+  }
+
+  return solve(0, 0);
+}
+
+function applyPartition(tasks, dates, buckets, cuts) {
+  let taskIndex = 0;
+
+  cuts.forEach((take, dayIndex) => {
+    for (let offset = 0; offset < take; offset += 1) {
+      buckets[dates[dayIndex]].push(tasks[taskIndex]);
+      taskIndex += 1;
+    }
+  });
+}
+
+function indexCombinations(length, amount, start = 0, prefix = []) {
+  if (amount === 0) return [prefix];
+
+  const combinations = [];
+
+  for (let index = start; index <= length - amount; index += 1) {
+    combinations.push(
+      ...indexCombinations(length, amount - 1, index + 1, [...prefix, index])
+    );
+  }
+
+  return combinations;
+}
+
+function selectSoBlocksBeforeArqui(soTasks, arquiTasks, preDates, postDates) {
+  if (!soTasks.length || !preDates.length) return 0;
+
+  const postMinuteCapacity = postDates.length * DAILY_TARGET_MINUTES;
+  let requiredBefore = 0;
+  let remainingMinutes = tasksMinutes(soTasks);
+
+  while (
+    requiredBefore < soTasks.length &&
+    remainingMinutes > postMinuteCapacity
+  ) {
+    remainingMinutes -= taskMinutes(soTasks[requiredBefore]);
+    requiredBefore += 1;
+  }
+
+  const desiredInterleave = Math.min(
+    soTasks.length,
+    Math.ceil(preDates.length * 2 / 3)
+  );
+  const availableBlockSlots =
+    preDates.length * DAILY_MAX_BLOCKS - arquiTasks.length;
+  const slotLimited = availableBlockSlots > 0
+    ? Math.min(desiredInterleave, availableBlockSlots)
+    : Math.min(1, desiredInterleave);
+
+  return Math.min(
+    soTasks.length,
+    preDates.length,
+    Math.max(requiredBefore, slotLimited)
+  );
+}
+
+function buildMixedPreExamBuckets(arquiTasks, soTasks, dates) {
+  const baseBuckets = emptyBuckets(dates);
+
+  if (!dates.length) {
+    return { buckets: baseBuckets, cost: 0 };
+  }
+
+  const placementOptions = soTasks.length
+    ? indexCombinations(dates.length, Math.min(soTasks.length, dates.length))
+    : [[]];
+  let best = null;
+
+  placementOptions.forEach((indexes) => {
+    const candidateBuckets = emptyBuckets(dates);
+
+    indexes.forEach((dateIndex, taskIndex) => {
+      candidateBuckets[dates[dateIndex]].push(soTasks[taskIndex]);
+    });
+
+    const partition = partitionOrderedTasks(
+      arquiTasks,
+      dates,
+      candidateBuckets
+    );
+    if (!partition) return;
+
+    const spacingCost = indexes.reduce((total, dateIndex, index) => {
+      if (indexes.length <= 1) return total;
+      const ideal = index * (dates.length - 1) / (indexes.length - 1);
+      const distance = dateIndex - ideal;
+      return total + distance * distance * 18;
+    }, 0);
+    const totalCost = partition.cost + spacingCost;
+
+    if (!best || totalCost < best.cost) {
+      const scheduledBuckets = cloneBuckets(candidateBuckets);
+      applyPartition(arquiTasks, dates, scheduledBuckets, partition.cuts);
+      best = {
+        cost: totalCost,
+        buckets: scheduledBuckets
+      };
+    }
+  });
+
+  return best || { buckets: baseBuckets, cost: 0 };
+}
+
+function scheduleOrderedSegment(tasks, dates) {
+  const buckets = emptyBuckets(dates);
+  const partition = partitionOrderedTasks(tasks, dates, buckets);
+
+  if (partition) {
+    applyPartition(tasks, dates, buckets, partition.cuts);
+  }
+
+  return buckets;
+}
+
+function mergeBuckets(target, source) {
+  Object.entries(source).forEach(([date, tasks]) => {
+    target[date] ||= [];
+    target[date].push(...tasks);
+  });
+}
+
+function latestSelectableUpdateDate() {
+  const today = todayISO();
+
+  if (today < PLAN_START_DATE) return PLAN_START_DATE;
+  if (today > PLAN_END_DATE) return PLAN_END_DATE;
+  return today;
+}
+
+function normalizeUpdateStartDate(value) {
+  const latest = latestSelectableUpdateDate();
+  let selected = value || latest;
+
+  if (selected < PLAN_START_DATE) selected = PLAN_START_DATE;
+  if (selected > latest) selected = latest;
+
+  return selected;
+}
+
+function rebuildFromCurrentSources(selectedStartDate) {
+  const updateStart = normalizeUpdateStartDate(selectedStartDate);
+  const arquiStudyEnd = addDaysISO(ARQUI_EXAM_DATE, -1);
+  const soStudyEnd = addDaysISO(SO_EXAM_DATE, -1);
+  const preArquiDates = updateStart <= arquiStudyEnd
+    ? isoRange(updateStart, arquiStudyEnd)
+    : [];
+  const postArquiStart = [updateStart, addDaysISO(ARQUI_EXAM_DATE, 1)]
+    .sort()
+    .slice(-1)[0];
+  const postArquiDates = postArquiStart <= soStudyEnd
+    ? isoRange(postArquiStart, soStudyEnd)
+    : [];
+  const allStudyDates = [...preArquiDates, ...postArquiDates];
+  const manualTasks = currentManualTasks();
+  const arquiTasks = orderedArquiTasks(readArquiDays(), manualTasks);
+  const soTasks = orderedSoTasks(readSoTasks(), manualTasks);
+  const soBeforeCount = selectSoBlocksBeforeArqui(
+    soTasks,
+    arquiTasks,
+    preArquiDates,
+    postArquiDates
+  );
+  const soBeforeArqui = soTasks.slice(0, soBeforeCount);
+  const soAfterArqui = soTasks.slice(soBeforeCount);
+  const buckets = emptyBuckets(allStudyDates);
+
+  const mixedSegment = buildMixedPreExamBuckets(
+    arquiTasks,
+    soBeforeArqui,
+    preArquiDates
+  );
+  mergeBuckets(buckets, mixedSegment.buckets);
+
+  if (postArquiDates.length) {
+    mergeBuckets(
+      buckets,
+      scheduleOrderedSegment(soAfterArqui, postArquiDates)
+    );
+  } else if (soAfterArqui.length && preArquiDates.length) {
+    mergeBuckets(
+      buckets,
+      scheduleOrderedSegment(soAfterArqui, preArquiDates)
+    );
+  }
+
+  if (ARQUI_EXAM_DATE >= updateStart && ARQUI_EXAM_DATE <= PLAN_END_DATE) {
+    buckets[ARQUI_EXAM_DATE] = [
       examTask(
         "arqui",
         "Examen de Arquitectura de Computadoras",
@@ -938,8 +1258,8 @@ function rebuildFromCurrentSources() {
     ];
   }
 
-  if ("2026-07-29" >= updateStart && "2026-07-29" <= PLAN_END_DATE) {
-    buckets["2026-07-29"] = [
+  if (SO_EXAM_DATE >= updateStart && SO_EXAM_DATE <= PLAN_END_DATE) {
+    buckets[SO_EXAM_DATE] = [
       examTask(
         "so",
         "Examen de Sistemas Operativos",
@@ -947,14 +1267,6 @@ function rebuildFromCurrentSources() {
       )
     ];
   }
-
-  manualTasks.forEach((task) => {
-    const date = task.manualDate || task.sourceDate;
-    if (date < updateStart || state.deleted[task.id]) return;
-    if (!buckets[date]) buckets[date] = [];
-    const { manualDate, ...storedTask } = task;
-    buckets[date].push(storedTask);
-  });
 
   const days = Object.entries(buckets)
     .filter(([, tasks]) => tasks.length)
@@ -965,7 +1277,7 @@ function rebuildFromCurrentSources() {
     kind: "local-sources",
     createdAt: new Date().toISOString(),
     startDate: updateStart,
-    sourceLabel: `Plan vigente desde ${shortDateLabel(updateStart)}`,
+    sourceLabel: `Plan equilibrado desde ${shortDateLabel(updateStart)}`,
     days
   };
 
@@ -984,7 +1296,7 @@ function rebuildFromCurrentSources() {
   updateFilterButtons();
   render();
   showToast(
-    `Plan reconstruido desde ${shortDateLabel(updateStart)}. Se quitaron los días anteriores.`
+    `Plan redistribuido desde ${shortDateLabel(updateStart)}: se recuperaron los bloques anteriores y se equilibró la carga diaria.`
   );
 }
 
@@ -1049,14 +1361,23 @@ elements.showAllButton.addEventListener("click", () => {
 });
 
 elements.updateButton.addEventListener("click", () => {
-  elements.updateFromDate.textContent = dateLabel(todayISO());
+  const latest = latestSelectableUpdateDate();
+
+  elements.updateStartDate.min = PLAN_START_DATE;
+  elements.updateStartDate.max = latest;
+  elements.updateStartDate.value = latest;
   elements.updateDialog.showModal();
+  elements.updateStartDate.focus();
 });
 
 elements.confirmUpdateButton.addEventListener("click", (event) => {
   event.preventDefault();
+
+  if (!elements.updateStartDate.reportValidity()) return;
+
+  const selectedStartDate = elements.updateStartDate.value;
   elements.updateDialog.close();
-  rebuildFromCurrentSources();
+  rebuildFromCurrentSources(selectedStartDate);
 });
 
 elements.restoreInitialButton.addEventListener("click", (event) => {

@@ -19,8 +19,6 @@
   >
 
   <link rel="stylesheet" href="style.css">
-  
-  <link rel="icon" type="image/png" href="favicon.png">
   <script src="app.js" defer></script>
 </head>
 
@@ -150,15 +148,26 @@
       <span class="dialog-mark" aria-hidden="true">↻</span>
       <h2>Actualizar el plan unificado</h2>
       <p>
-        Se leerán los planes guardados por las páginas de Arquitectura y
-        Sistemas Operativos y se reorganizará únicamente desde
-        <strong id="updateFromDate"></strong> en adelante.
+        Se leerán todos los bloques de Arquitectura y Sistemas Operativos,
+        incluso los que originalmente estaban asignados antes de la fecha que
+        elijas, y se distribuirán nuevamente desde allí hasta cada examen.
       </p>
+
+      <label class="move-date-field update-start-field">
+        <span>Repartir el plan desde</span>
+        <input id="updateStartDate" type="date" required>
+        <small>
+          Elegí una fecha anterior a hoy si ya habías empezado antes de
+          actualizar los planes originales.
+        </small>
+      </label>
+
       <p class="dialog-warning">
-        Todo lo anterior a esa fecha se quitará del calendario y el plan
-        comenzará allí. Esto ocurrirá solamente al confirmar esta actualización;
-        abrir la página otro día no modificará la distribución. Los bloques
-        eliminados seguirán disponibles en la sección de recuperación.
+        No quedarán tareas antes de la fecha elegida. Arquitectura y Sistemas
+        se intercalarán antes del primer examen, manteniendo el orden de estudio
+        e intentando no superar cinco bloques ni seis horas por día. Esto solo
+        ocurre al confirmar; abrir la página otro día no modifica el plan. Los
+        bloques eliminados seguirán en recuperación.
       </p>
       <div class="dialog-actions">
         <button value="cancel" class="text-button">Cancelar</button>
