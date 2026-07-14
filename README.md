@@ -67,23 +67,10 @@ favicon.png
 - carlonchoStars incluye acceso directo a la versión jugable y al repositorio.
 
 
-## Versión v7 — plan unificado
+## Versión v7
 
-Se agregó una página independiente:
+Se agregó una sección **Herramientas** con:
 
-```text
-/plan/
-```
-
-La portada principal conserva su diseño y solamente muestra un enlace textual
-nuevo en la navegación.
-
-El plan unificado:
-
-- combina Arquitectura de Computadoras y Sistemas Operativos;
-- conserva días de una sola materia y días compartidos;
-- guarda el progreso en `localStorage`;
-- no redistribuye al marcar tareas;
-- puede leer manualmente los estados actuales guardados por `/arqui/` y `/so/`;
-- solo cambia la distribución al pulsar **Actualizar desde planes**;
-- permite restaurar la distribución inicial.
+- **Conciliapp**
+- Acceso: `/conciliapp/`
+- Uso: conciliación de movimientos contables provenientes de dos fuentes.
