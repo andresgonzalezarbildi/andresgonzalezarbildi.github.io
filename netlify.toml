@@ -1,0 +1,17 @@
+[[redirects]]
+  from = "/conciliapp"
+  to = "/conciliapp/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/conciliapp/"
+  to = "https://conciliapps.netlify.app/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/conciliapp/*"
+  to = "https://conciliapps.netlify.app/:splat"
+  status = 200
+  force = true
