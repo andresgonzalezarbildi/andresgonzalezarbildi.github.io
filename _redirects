@@ -1,3 +1,3 @@
-/conciliapp  /conciliapp/  301!
-/conciliapp/  https://conciliapps.netlify.app/  200!
-/conciliapp/*  https://conciliapps.netlify.app/:splat  200!
+/conciliapp  /conciliapp/  302
+/conciliapp/  https://conciliapps.netlify.app/  200
+/conciliapp/*  https://conciliapps.netlify.app/:splat  200
