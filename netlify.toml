@@ -9,3 +9,21 @@
   to = "https://conciliapps.netlify.app/:splat"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/so/*"
+  to = "https://estudiofing.netlify.app/so/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/arqui/*"
+  to = "https://estudiofing.netlify.app/arqui/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/plan/*"
+  to = "https://estudiofing.netlify.app/plan/:splat"
+  status = 200
+  force = true
