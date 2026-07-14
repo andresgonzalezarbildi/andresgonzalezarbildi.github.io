@@ -1,9 +1,11 @@
-const DEFAULT_DAYS = [{"date":"2026-07-12","tasks":[{"id":"arqui:rep_c2_flags","subject":"arqui","title":"Complemento a 2 y banderas","minutes":50,"kind":"procedimiento","sourceDate":"2026-07-12","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"arqui:rep_ieee","subject":"arqui","title":"Normalizar y codificar IEEE 754","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-12","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"arqui:comb_design","subject":"arqui","title":"Diseño con MUX y decodificador","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-12","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"arqui:bool_kmap","subject":"arqui","title":"Mapa de Karnaugh completo","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-12","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."}]},{"date":"2026-07-13","tasks":[{"id":"arqui:num_bin_hex","subject":"arqui","title":"Practicar binario ↔ hexadecimal","minutes":50,"kind":"procedimiento","sourceDate":"2026-07-13","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"arqui:intro_model","subject":"arqui","title":"Repasar el modelo de computador","minutes":35,"kind":"repaso","sourceDate":"2026-07-13","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"arqui:codes_hamming","subject":"arqui","title":"Resolver un ejercicio de Hamming","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-13","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"so:plan_day_1","subject":"so","title":"Diagnóstico y mapa general","minutes":90,"kind":"tema","sourceDate":"2026-07-13","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."}]},{"date":"2026-07-14","tasks":[{"id":"arqui:x86_stack","subject":"arqui","title":"Dibujar un frame de stack con BP","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-13","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"arqui:x86_segments","subject":"arqui","title":"Segmentación y direccionamiento 8086","minutes":50,"kind":"procedimiento","sourceDate":"2026-07-14","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"arqui:x86_compile","subject":"arqui","title":"Traducir control de alto nivel a 8086","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-14","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"so:plan_day_2","subject":"so","title":"Procesos, fork y threads","minutes":120,"kind":"tema","sourceDate":"2026-07-14","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."}]},{"date":"2026-07-15","tasks":[{"id":"arqui:x86_stack_cost","subject":"arqui","title":"Calcular consumo máximo de stack","minutes":50,"kind":"procedimiento","sourceDate":"2026-07-14","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"arqui:x86_recursion","subject":"arqui","title":"Programar una función recursiva","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-15","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"arqui:x86_graphs","subject":"arqui","title":"Recorrer árbol o grafo usando stack","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-15","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."}]},{"date":"2026-07-16","tasks":[{"id":"arqui:mem_function","subject":"arqui","title":"Definir entradas, salidas y dirección","minutes":50,"kind":"procedimiento","sourceDate":"2026-07-15","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"arqui:mem_org","subject":"arqui","title":"Organización y arreglo de ROM","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-16","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"arqui:mem_load","subject":"arqui","title":"Programar una carga de ROM","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-16","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"so:plan_day_3","subject":"so","title":"Planificación básica","minutes":120,"kind":"tema","sourceDate":"2026-07-15","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."}]},{"date":"2026-07-17","tasks":[{"id":"arqui:io_programmed","subject":"arqui","title":"E/S programada, puertos y máscaras","minutes":50,"kind":"procedimiento","sourceDate":"2026-07-17","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"arqui:io_handler","subject":"arqui","title":"Crear una rutina de interrupción","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-16","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"arqui:io_context","subject":"arqui","title":"Preservar contexto y volver con IRET","minutes":50,"kind":"procedimiento","sourceDate":"2026-07-17","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"so:plan_day_4","subject":"so","title":"Planificación avanzada","minutes":100,"kind":"tema","sourceDate":"2026-07-16","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."}]},{"date":"2026-07-18","tasks":[{"id":"so:plan_day_5","subject":"so","title":"Semáforos y precedencias","minutes":130,"kind":"tema","sourceDate":"2026-07-17","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."},{"id":"so:plan_day_6","subject":"so","title":"Monitores","minutes":120,"kind":"tema","sourceDate":"2026-07-18","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."}]},{"date":"2026-07-19","tasks":[{"id":"arqui:io_vector","subject":"arqui","title":"Instalar el vector de interrupción","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-17","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"arqui:io_timer","subject":"arqui","title":"Resolver timers, ticks y segundos","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-18","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"arqui:io_system","subject":"arqui","title":"Sistema completo con varias interrupciones","minutes":75,"kind":"desafio","sourceDate":"2026-07-18","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"arqui:fsm_design","subject":"arqui","title":"Diseñar una máquina de estados","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-18","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."}]},{"date":"2026-07-20","tasks":[{"id":"arqui:seq_ff","subject":"arqui","title":"Flip-flops, excitación y contadores","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-19","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"arqui:cache_fields","subject":"arqui","title":"Calcular tag, conjunto y offset","minutes":50,"kind":"procedimiento","sourceDate":"2026-07-19","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"arqui:cache_trace","subject":"arqui","title":"Simular hits y misses de una traza","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-19","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"arqui:mixed_exam_1","subject":"arqui","title":"Resolver dos ejercicios mezclados de examen","minutes":75,"kind":"practica","sourceDate":"2026-07-21","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"arqui:simulation_1","subject":"arqui","title":"Simulacro completo 1","minutes":120,"kind":"simulacro","sourceDate":"2026-07-21","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."}]},{"date":"2026-07-21","tasks":[{"id":"arqui:cpu_cycle","subject":"arqui","title":"Ciclo de instrucción y señales de control","minutes":35,"kind":"repaso","sourceDate":"2026-07-19","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"arqui:mlg_format","subject":"arqui","title":"Formato y largo de instrucción","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-20","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"arqui:pipeline","subject":"arqui","title":"Pipeline, hazards y stalls","minutes":35,"kind":"repaso","sourceDate":"2026-07-20","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"arqui:superscalar","subject":"arqui","title":"Superescalares, renaming y commit","minutes":35,"kind":"repaso","sourceDate":"2026-07-20","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"arqui:mixed_exam_2","subject":"arqui","title":"Corregir errores y repetir un ejercicio","minutes":75,"kind":"practica","sourceDate":"2026-07-20","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"so:plan_day_7","subject":"so","title":"Mailboxes y Ada","minutes":140,"kind":"tema","sourceDate":"2026-07-19","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."}]},{"date":"2026-07-22","tasks":[{"id":"arqui:simulation_2","subject":"arqui","title":"Simulacro final y repaso de dudas","minutes":120,"kind":"simulacro","sourceDate":"2026-07-22","href":"/arqui/","details":"Bloque importado del plan de Arquitectura de Computadoras."},{"id":"so:plan_day_8","subject":"so","title":"Deadlock y repaso de concurrencia","minutes":100,"kind":"tema","sourceDate":"2026-07-20","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."}]},{"date":"2026-07-23","tasks":[{"id":"arqui:exam","subject":"arqui","title":"Examen de Arquitectura de Computadoras","minutes":0,"kind":"examen","sourceDate":"2026-07-23","href":"/arqui/","details":"Repaso breve solamente. No incorporar temas nuevos."}]},{"date":"2026-07-24","tasks":[{"id":"so:plan_day_9","subject":"so","title":"Memoria: formatos y tablas","minutes":120,"kind":"tema","sourceDate":"2026-07-21","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."},{"id":"so:plan_day_10","subject":"so","title":"Memoria: TLB y fallos","minutes":120,"kind":"tema","sourceDate":"2026-07-22","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."}]},{"date":"2026-07-25","tasks":[{"id":"so:plan_day_11","subject":"so","title":"Reemplazo y thrashing","minutes":120,"kind":"tema","sourceDate":"2026-07-23","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."},{"id":"so:plan_day_12","subject":"so","title":"Sistemas de archivos: cotas","minutes":120,"kind":"tema","sourceDate":"2026-07-24","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."}]},{"date":"2026-07-26","tasks":[{"id":"so:plan_day_13","subject":"so","title":"Sistemas de archivos: FAT y caminos","minutes":120,"kind":"tema","sourceDate":"2026-07-25","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."},{"id":"so:plan_day_14","subject":"so","title":"Operaciones y consistencia","minutes":120,"kind":"tema","sourceDate":"2026-07-26","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."}]},{"date":"2026-07-27","tasks":[{"id":"so:plan_day_15","subject":"so","title":"Disco, RAID y E/S","minutes":180,"kind":"tema","sourceDate":"2026-07-27","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."}]},{"date":"2026-07-28","tasks":[{"id":"so:plan_day_16","subject":"so","title":"Seguridad, virtualización y simulacro","minutes":180,"kind":"tema","sourceDate":"2026-07-28","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."}]},{"date":"2026-07-29","tasks":[{"id":"so:exam","subject":"so","title":"Examen de Sistemas Operativos","minutes":0,"kind":"examen","sourceDate":"2026-07-29","href":"/so/","details":"Repaso breve solamente. No incorporar temas nuevos."}]}];
+const DEFAULT_DAYS = [{"date":"2026-07-12","tasks":[{"id":"arqui:rep_c2_flags","subject":"arqui","title":"Complemento a 2 y banderas","minutes":50,"kind":"procedimiento","sourceDate":"2026-07-12","href":"/arqui/","details":"Operar en complemento a 2 y justificar las banderas obtenidas."},{"id":"arqui:rep_ieee","subject":"arqui","title":"Normalizar y codificar IEEE 754","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-12","href":"/arqui/","details":"Normalizar el valor y completar signo, exponente y mantisa."},{"id":"arqui:comb_design","subject":"arqui","title":"Diseño con MUX y decodificador","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-12","href":"/arqui/","details":"Obtener la función e implementarla con MUX o decodificador."},{"id":"arqui:bool_kmap","subject":"arqui","title":"Mapa de Karnaugh completo","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-12","href":"/arqui/","details":"Agrupar unos, minimizar la función y verificar la expresión final."}]},{"date":"2026-07-13","tasks":[{"id":"arqui:num_bin_hex","subject":"arqui","title":"Practicar binario ↔ hexadecimal","minutes":50,"kind":"procedimiento","sourceDate":"2026-07-13","href":"/arqui/","details":"Convertir valores en ambos sentidos y comprobar el resultado."},{"id":"arqui:intro_model","subject":"arqui","title":"Repasar el modelo de computador","minutes":35,"kind":"repaso","sourceDate":"2026-07-13","href":"/arqui/","details":"Ubicar CPU, memoria y E/S, y explicar cómo se conectan."},{"id":"arqui:codes_hamming","subject":"arqui","title":"Resolver un ejercicio de Hamming","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-13","href":"/arqui/","details":"Calcular bits de paridad, detectar el error y corregirlo."},{"id":"so:plan_day_1","subject":"so","title":"Diagnóstico y mapa general","minutes":90,"kind":"tema","sourceDate":"2026-07-13","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."}]},{"date":"2026-07-14","tasks":[{"id":"arqui:x86_stack","subject":"arqui","title":"Dibujar un frame de stack con BP","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-13","href":"/arqui/","details":"Dibujar el stack y marcar parámetros, retorno, BP y variables locales."},{"id":"arqui:x86_segments","subject":"arqui","title":"Segmentación y direccionamiento 8086","minutes":50,"kind":"procedimiento","sourceDate":"2026-07-14","href":"/arqui/","details":"Calcular direcciones físicas e identificar segmentos implícitos."},{"id":"arqui:x86_compile","subject":"arqui","title":"Traducir control de alto nivel a 8086","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-14","href":"/arqui/","details":"Pasar condiciones y bucles a saltos y comparaciones en 8086."},{"id":"so:plan_day_2","subject":"so","title":"Procesos, fork y threads","minutes":120,"kind":"tema","sourceDate":"2026-07-14","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."}]},{"date":"2026-07-15","tasks":[{"id":"arqui:x86_stack_cost","subject":"arqui","title":"Calcular consumo máximo de stack","minutes":50,"kind":"procedimiento","sourceDate":"2026-07-14","href":"/arqui/","details":"Calcular bytes por nivel y multiplicarlos por la profundidad máxima."},{"id":"arqui:x86_recursion","subject":"arqui","title":"Programar una función recursiva","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-15","href":"/arqui/","details":"Definir caso base, llamada recursiva y preservación del contexto."},{"id":"arqui:x86_graphs","subject":"arqui","title":"Recorrer árbol o grafo usando stack","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-15","href":"/arqui/","details":"Representar el recorrido y controlar el uso del stack en cada llamada."}]},{"date":"2026-07-16","tasks":[{"id":"arqui:mem_function","subject":"arqui","title":"Definir entradas, salidas y dirección","minutes":50,"kind":"procedimiento","sourceDate":"2026-07-15","href":"/arqui/","details":"Identificar entradas, salidas y la dirección correspondiente a cada dato."},{"id":"arqui:mem_org","subject":"arqui","title":"Organización y arreglo de ROM","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-16","href":"/arqui/","details":"Determinar capacidad, líneas de dirección y conexión entre chips."},{"id":"arqui:mem_load","subject":"arqui","title":"Programar una carga de ROM","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-16","href":"/arqui/","details":"Escribir el recorrido de carga y controlar direcciones, datos y banderas."},{"id":"so:plan_day_3","subject":"so","title":"Planificación básica","minutes":120,"kind":"tema","sourceDate":"2026-07-15","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."}]},{"date":"2026-07-17","tasks":[{"id":"arqui:io_programmed","subject":"arqui","title":"E/S programada, puertos y máscaras","minutes":50,"kind":"procedimiento","sourceDate":"2026-07-17","href":"/arqui/","details":"Leer o escribir puertos aplicando las máscaras necesarias."},{"id":"arqui:io_handler","subject":"arqui","title":"Crear una rutina de interrupción","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-16","href":"/arqui/","details":"Separar evento, estado y acción dentro de la rutina de servicio."},{"id":"arqui:io_context","subject":"arqui","title":"Preservar contexto y volver con IRET","minutes":50,"kind":"procedimiento","sourceDate":"2026-07-17","href":"/arqui/","details":"Guardar los registros usados y restaurarlos antes de ejecutar IRET."},{"id":"so:plan_day_4","subject":"so","title":"Planificación avanzada","minutes":100,"kind":"tema","sourceDate":"2026-07-16","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."}]},{"date":"2026-07-18","tasks":[{"id":"so:plan_day_5","subject":"so","title":"Semáforos y precedencias","minutes":130,"kind":"tema","sourceDate":"2026-07-17","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."},{"id":"so:plan_day_6","subject":"so","title":"Monitores","minutes":120,"kind":"tema","sourceDate":"2026-07-18","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."}]},{"date":"2026-07-19","tasks":[{"id":"arqui:io_vector","subject":"arqui","title":"Instalar el vector de interrupción","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-17","href":"/arqui/","details":"Calcular segmento y offset e instalar correctamente el vector."},{"id":"arqui:io_timer","subject":"arqui","title":"Resolver timers, ticks y segundos","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-18","href":"/arqui/","details":"Relacionar frecuencia, ticks y tiempo, y actualizar el contador."},{"id":"arqui:io_system","subject":"arqui","title":"Sistema completo con varias interrupciones","minutes":75,"kind":"desafio","sourceDate":"2026-07-18","href":"/arqui/","details":"Integrar vectores, rutinas, estado compartido y programa principal."},{"id":"arqui:fsm_design","subject":"arqui","title":"Diseñar una máquina de estados","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-18","href":"/arqui/","details":"Definir estados, tabla, ecuaciones y circuito final."}]},{"date":"2026-07-20","tasks":[{"id":"arqui:seq_ff","subject":"arqui","title":"Flip-flops, excitación y contadores","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-19","href":"/arqui/","details":"Completar excitaciones y diseñar el contador o secuencial pedido."},{"id":"arqui:cache_fields","subject":"arqui","title":"Calcular tag, conjunto y offset","minutes":50,"kind":"procedimiento","sourceDate":"2026-07-19","href":"/arqui/","details":"Separar la dirección en tag, conjunto y offset."},{"id":"arqui:cache_trace","subject":"arqui","title":"Simular hits y misses de una traza","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-19","href":"/arqui/","details":"Recorrer la traza y registrar hits, misses y reemplazos."},{"id":"arqui:mixed_exam_1","subject":"arqui","title":"Resolver dos ejercicios mezclados de examen","minutes":75,"kind":"practica","sourceDate":"2026-07-21","href":"/arqui/","details":"Resolver sin apuntes y anotar los errores que se repiten."},{"id":"arqui:simulation_1","subject":"arqui","title":"Simulacro completo 1","minutes":120,"kind":"simulacro","sourceDate":"2026-07-21","href":"/arqui/","details":"Resolver un examen completo con tiempo y corrección posterior."}]},{"date":"2026-07-21","tasks":[{"id":"arqui:cpu_cycle","subject":"arqui","title":"Ciclo de instrucción y señales de control","minutes":35,"kind":"repaso","sourceDate":"2026-07-19","href":"/arqui/","details":"Seguir fetch, decodificación y ejecución indicando señales de control."},{"id":"arqui:mlg_format","subject":"arqui","title":"Formato y largo de instrucción","minutes":60,"kind":"ejercicio","sourceDate":"2026-07-20","href":"/arqui/","details":"Calcular campos, cantidad de códigos y largo de instrucción."},{"id":"arqui:pipeline","subject":"arqui","title":"Pipeline, hazards y stalls","minutes":35,"kind":"repaso","sourceDate":"2026-07-20","href":"/arqui/","details":"Detectar hazards y decidir forwarding, stalls o predicción."},{"id":"arqui:superscalar","subject":"arqui","title":"Superescalares, renaming y commit","minutes":35,"kind":"repaso","sourceDate":"2026-07-20","href":"/arqui/","details":"Distinguir dependencias, renaming, ejecución y commit en orden."},{"id":"arqui:mixed_exam_2","subject":"arqui","title":"Corregir errores y repetir un ejercicio","minutes":75,"kind":"practica","sourceDate":"2026-07-20","href":"/arqui/","details":"Corregir el procedimiento y repetir el ejercicio desde cero."},{"id":"so:plan_day_7","subject":"so","title":"Mailboxes y Ada","minutes":140,"kind":"tema","sourceDate":"2026-07-19","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."}]},{"date":"2026-07-22","tasks":[{"id":"arqui:simulation_2","subject":"arqui","title":"Simulacro final y repaso de dudas","minutes":120,"kind":"simulacro","sourceDate":"2026-07-22","href":"/arqui/","details":"Hacer el último simulacro y repasar únicamente los errores detectados."},{"id":"so:plan_day_8","subject":"so","title":"Deadlock y repaso de concurrencia","minutes":100,"kind":"tema","sourceDate":"2026-07-20","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."}]},{"date":"2026-07-23","tasks":[{"id":"arqui:exam","subject":"arqui","title":"Examen de Arquitectura de Computadoras","minutes":0,"kind":"examen","sourceDate":"2026-07-23","href":"/arqui/","details":"Repaso breve solamente. No incorporar temas nuevos."}]},{"date":"2026-07-24","tasks":[{"id":"so:plan_day_9","subject":"so","title":"Memoria: formatos y tablas","minutes":120,"kind":"tema","sourceDate":"2026-07-21","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."},{"id":"so:plan_day_10","subject":"so","title":"Memoria: TLB y fallos","minutes":120,"kind":"tema","sourceDate":"2026-07-22","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."}]},{"date":"2026-07-25","tasks":[{"id":"so:plan_day_11","subject":"so","title":"Reemplazo y thrashing","minutes":120,"kind":"tema","sourceDate":"2026-07-23","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."},{"id":"so:plan_day_12","subject":"so","title":"Sistemas de archivos: cotas","minutes":120,"kind":"tema","sourceDate":"2026-07-24","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."}]},{"date":"2026-07-26","tasks":[{"id":"so:plan_day_13","subject":"so","title":"Sistemas de archivos: FAT y caminos","minutes":120,"kind":"tema","sourceDate":"2026-07-25","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."},{"id":"so:plan_day_14","subject":"so","title":"Operaciones y consistencia","minutes":120,"kind":"tema","sourceDate":"2026-07-26","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."}]},{"date":"2026-07-27","tasks":[{"id":"so:plan_day_15","subject":"so","title":"Disco, RAID y E/S","minutes":180,"kind":"tema","sourceDate":"2026-07-27","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."}]},{"date":"2026-07-28","tasks":[{"id":"so:plan_day_16","subject":"so","title":"Seguridad, virtualización y simulacro","minutes":180,"kind":"tema","sourceDate":"2026-07-28","href":"/so/","details":"Repaso activo con tarjetas. · Resolver ejercicios sin mirar la solución. · Corregir con solución oficial y registrar errores."}]},{"date":"2026-07-29","tasks":[{"id":"so:exam","subject":"so","title":"Examen de Sistemas Operativos","minutes":0,"kind":"examen","sourceDate":"2026-07-29","href":"/so/","details":"Repaso breve solamente. No incorporar temas nuevos."}]}];
 const EMBEDDED_SOURCES = {"arquiModules":[{"id":"arqui:intro_model","title":"Repasar el modelo de computador","topic":"tema_01_introduccion","nodes":["intro_modelo","intro_organizacion"],"phase":1,"weight":1,"kind":"repaso","sourceId":"intro_model","minutes":35,"href":"/arqui/"},{"id":"arqui:num_bin_hex","title":"Practicar binario ↔ hexadecimal","topic":"tema_02_sistemas_numeracion","nodes":["num_bases","num_dec_bin","num_bin_hex","num_hex_bin"],"phase":1,"weight":1,"kind":"procedimiento","sourceId":"num_bin_hex","minutes":50,"href":"/arqui/"},{"id":"arqui:codes_hamming","title":"Resolver un ejercicio de Hamming","topic":"tema_03_codigos_errores","nodes":["err_distancia","err_hamming","err_posiciones_hamming"],"phase":1,"weight":1.1,"kind":"ejercicio","sourceId":"codes_hamming","minutes":60,"href":"/arqui/"},{"id":"arqui:rep_c2_flags","title":"Complemento a 2 y banderas","topic":"tema_04_representacion_datos","nodes":["rep_c2","rep_extender_signo","rep_banderas","rep_overflow_signos"],"phase":1,"weight":1.2,"kind":"procedimiento","sourceId":"rep_c2_flags","minutes":50,"href":"/arqui/"},{"id":"arqui:rep_ieee","title":"Normalizar y codificar IEEE 754","topic":"tema_04_representacion_datos","nodes":["rep_ieee","rep_ieee_normalizar","rep_ieee_campos"],"phase":1,"weight":1.2,"kind":"ejercicio","sourceId":"rep_ieee","minutes":60,"href":"/arqui/"},{"id":"arqui:bool_kmap","title":"Mapa de Karnaugh completo","topic":"tema_05_algebra_boole","nodes":["bool_karnaugh","bool_karnaugh_grupos","bool_karnaugh_expresion"],"phase":1,"weight":1.1,"kind":"ejercicio","sourceId":"bool_kmap","minutes":60,"href":"/arqui/"},{"id":"arqui:comb_design","title":"Diseño con MUX y decodificador","topic":"tema_06_circuitos_combinatorios","nodes":["comb_especificar","comb_mux","comb_dec"],"phase":1,"weight":1.1,"kind":"ejercicio","sourceId":"comb_design","minutes":60,"href":"/arqui/"},{"id":"arqui:x86_segments","title":"Segmentación y direccionamiento 8086","topic":"tema_12_x86","nodes":["x86_segmentos","x86_direccionamiento"],"phase":2,"weight":1.2,"kind":"procedimiento","sourceId":"x86_segments","minutes":50,"href":"/arqui/"},{"id":"arqui:x86_stack","title":"Dibujar un frame de stack con BP","topic":"tema_12_x86","nodes":["x86_stack","x86_marco_stack","x86_offsets_param","x86_retorno_stack"],"phase":2,"weight":1.5,"kind":"ejercicio","sourceId":"x86_stack","minutes":60,"href":"/arqui/"},{"id":"arqui:x86_compile","title":"Traducir control de alto nivel a 8086","topic":"tema_12_x86","nodes":["x86_compilar"],"phase":2,"weight":1.2,"kind":"ejercicio","sourceId":"x86_compile","minutes":60,"href":"/arqui/"},{"id":"arqui:x86_recursion","title":"Programar una función recursiva","topic":"tema_12_x86","nodes":["x86_recursion","x86_caso_base","x86_llamada_rec"],"phase":3,"weight":1.5,"kind":"ejercicio","sourceId":"x86_recursion","minutes":60,"href":"/arqui/"},{"id":"arqui:x86_graphs","title":"Recorrer árbol o grafo usando stack","topic":"tema_12_x86","nodes":["x86_arboles","x86_recorrer_hijos"],"phase":3,"weight":1.5,"kind":"ejercicio","sourceId":"x86_graphs","minutes":60,"href":"/arqui/"},{"id":"arqui:x86_stack_cost","title":"Calcular consumo máximo de stack","topic":"tema_12_x86","nodes":["x86_consumo","x86_stack_por_nivel","x86_stack_total"],"phase":3,"weight":1.4,"kind":"procedimiento","sourceId":"x86_stack_cost","minutes":50,"href":"/arqui/"},{"id":"arqui:mem_org","title":"Organización y arreglo de ROM","topic":"tema_07_memorias","nodes":["mem_capacidad","mem_bits_direccion","mem_arreglos","mem_cs_oe"],"phase":4,"weight":1.3,"kind":"ejercicio","sourceId":"mem_org","minutes":60,"href":"/arqui/"},{"id":"arqui:mem_function","title":"Definir entradas, salidas y dirección","topic":"tema_07_memorias","nodes":["mem_funcion","mem_entradas_salidas","mem_direccion_concreta"],"phase":4,"weight":1.2,"kind":"procedimiento","sourceId":"mem_function","minutes":50,"href":"/arqui/"},{"id":"arqui:mem_load","title":"Programar una carga de ROM","topic":"tema_07_memorias","nodes":["mem_carga","mem_carga_bucle","mem_carga_flags"],"phase":4,"weight":1.5,"kind":"ejercicio","sourceId":"mem_load","minutes":60,"href":"/arqui/"},{"id":"arqui:io_programmed","title":"E/S programada, puertos y máscaras","topic":"tema_13_io_interrupciones","nodes":["io_programada","io_mascara_puerto"],"phase":5,"weight":1.1,"kind":"procedimiento","sourceId":"io_programmed","minutes":50,"href":"/arqui/"},{"id":"arqui:io_handler","title":"Crear una rutina de interrupción","topic":"tema_13_io_interrupciones","nodes":["io_rutina","io_evento_estado_accion"],"phase":5,"weight":1.5,"kind":"ejercicio","sourceId":"io_handler","minutes":60,"href":"/arqui/"},{"id":"arqui:io_context","title":"Preservar contexto y volver con IRET","topic":"tema_13_io_interrupciones","nodes":["io_contexto","io_push_pop"],"phase":5,"weight":1.2,"kind":"procedimiento","sourceId":"io_context","minutes":50,"href":"/arqui/"},{"id":"arqui:io_vector","title":"Instalar el vector de interrupción","topic":"tema_13_io_interrupciones","nodes":["io_vector","io_vector_direccion","io_segmento_offset"],"phase":5,"weight":1.4,"kind":"ejercicio","sourceId":"io_vector","minutes":60,"href":"/arqui/"},{"id":"arqui:io_timer","title":"Resolver timers, ticks y segundos","topic":"tema_13_io_interrupciones","nodes":["io_timers","io_ticks_segundos"],"phase":5,"weight":1.3,"kind":"ejercicio","sourceId":"io_timer","minutes":60,"href":"/arqui/"},{"id":"arqui:io_system","title":"Sistema completo con varias interrupciones","topic":"tema_13_io_interrupciones","nodes":["io_estados","io_estado_compartido","io_sistema","io_sistema_completo"],"phase":5,"weight":1.7,"kind":"desafio","sourceId":"io_system","minutes":75,"href":"/arqui/"},{"id":"arqui:cache_fields","title":"Calcular tag, conjunto y offset","topic":"tema_14_jerarquia_memoria","nodes":["cache_campos","cache_offset_bits","cache_sets_bits","cache_tag_bits"],"phase":6,"weight":1.2,"kind":"procedimiento","sourceId":"cache_fields","minutes":50,"href":"/arqui/"},{"id":"arqui:cache_trace","title":"Simular hits y misses de una traza","topic":"tema_14_jerarquia_memoria","nodes":["cache_mapeo","cache_simular","cache_traza","cache_tasa","cache_localidad"],"phase":6,"weight":1.5,"kind":"ejercicio","sourceId":"cache_trace","minutes":60,"href":"/arqui/"},{"id":"arqui:fsm_design","title":"Diseñar una máquina de estados","topic":"tema_08_maquinas_estado","nodes":["fsm_estados","fsm_diagrama","fsm_tabla_completa","fsm_ecuaciones","fsm_circuito_final"],"phase":6,"weight":1.5,"kind":"ejercicio","sourceId":"fsm_design","minutes":60,"href":"/arqui/"},{"id":"arqui:seq_ff","title":"Flip-flops, excitación y contadores","topic":"tema_09_circuitos_secuenciales","nodes":["seq_ff","seq_tabla_excitacion","seq_contadores","seq_modulo"],"phase":6,"weight":1.2,"kind":"ejercicio","sourceId":"seq_ff","minutes":60,"href":"/arqui/"},{"id":"arqui:mlg_format","title":"Formato y largo de instrucción","topic":"tema_10_maquina_logica","nodes":["mlg_formato","mlg_campos","mlg_largo_instruccion"],"phase":6,"weight":1.1,"kind":"ejercicio","sourceId":"mlg_format","minutes":60,"href":"/arqui/"},{"id":"arqui:cpu_cycle","title":"Ciclo de instrucción y señales de control","topic":"tema_11_cpu","nodes":["cpu_ciclo","cpu_fetch","cpu_control","cpu_senales"],"phase":6,"weight":1.2,"kind":"repaso","sourceId":"cpu_cycle","minutes":35,"href":"/arqui/"},{"id":"arqui:pipeline","title":"Pipeline, hazards y stalls","topic":"tema_15_pipeline","nodes":["pipe_etapas","pipe_datos","pipe_forwarding","pipe_insertar_stall","pipe_prediccion"],"phase":7,"weight":1.3,"kind":"repaso","sourceId":"pipeline","minutes":35,"href":"/arqui/"},{"id":"arqui:superscalar","title":"Superescalares, renaming y commit","topic":"tema_16_superescalares","nodes":["super_ilp","super_war_waw","super_rename","super_commit"],"phase":7,"weight":1.1,"kind":"repaso","sourceId":"superscalar","minutes":35,"href":"/arqui/"},{"id":"arqui:mixed_exam_1","title":"Resolver dos ejercicios mezclados de examen","topic":"","nodes":[],"phase":8,"weight":1.6,"kind":"practica","sourceId":"mixed_exam_1","minutes":75,"href":"/arqui/"},{"id":"arqui:mixed_exam_2","title":"Corregir errores y repetir un ejercicio","topic":"","nodes":[],"phase":8,"weight":1.4,"kind":"practica","sourceId":"mixed_exam_2","minutes":75,"href":"/arqui/"},{"id":"arqui:simulation_1","title":"Simulacro completo 1","topic":"","nodes":[],"phase":9,"weight":2,"kind":"simulacro","sourceId":"simulation_1","minutes":120,"href":"/arqui/"},{"id":"arqui:simulation_2","title":"Simulacro final y repaso de dudas","topic":"","nodes":[],"phase":9,"weight":2,"kind":"simulacro","sourceId":"simulation_2","minutes":120,"href":"/arqui/"}],"arquiDays":[{"date":"2026-07-12","tasks":[{"id":"arqui:rep_c2_flags","title":"Complemento a 2 y banderas","topic":"tema_04_representacion_datos","nodes":["rep_c2","rep_extender_signo","rep_banderas","rep_overflow_signos"],"phase":1,"weight":1.2,"kind":"procedimiento","sourceId":"rep_c2_flags","subject":"arqui"},{"id":"arqui:rep_ieee","title":"Normalizar y codificar IEEE 754","topic":"tema_04_representacion_datos","nodes":["rep_ieee","rep_ieee_normalizar","rep_ieee_campos"],"phase":1,"weight":1.2,"kind":"ejercicio","sourceId":"rep_ieee","subject":"arqui"},{"id":"arqui:comb_design","title":"Diseño con MUX y decodificador","topic":"tema_06_circuitos_combinatorios","nodes":["comb_especificar","comb_mux","comb_dec"],"phase":1,"weight":1.1,"kind":"ejercicio","sourceId":"comb_design","subject":"arqui"},{"id":"arqui:bool_kmap","title":"Mapa de Karnaugh completo","topic":"tema_05_algebra_boole","nodes":["bool_karnaugh","bool_karnaugh_grupos","bool_karnaugh_expresion"],"phase":1,"weight":1.1,"kind":"ejercicio","sourceId":"bool_kmap","subject":"arqui"}]},{"date":"2026-07-13","tasks":[{"id":"arqui:num_bin_hex","title":"Practicar binario ↔ hexadecimal","topic":"tema_02_sistemas_numeracion","nodes":["num_bases","num_dec_bin","num_bin_hex","num_hex_bin"],"phase":1,"weight":1,"kind":"procedimiento","sourceId":"num_bin_hex","subject":"arqui"},{"id":"arqui:intro_model","title":"Repasar el modelo de computador","topic":"tema_01_introduccion","nodes":["intro_modelo","intro_organizacion"],"phase":1,"weight":1,"kind":"repaso","sourceId":"intro_model","subject":"arqui"},{"id":"arqui:codes_hamming","title":"Resolver un ejercicio de Hamming","topic":"tema_03_codigos_errores","nodes":["err_distancia","err_hamming","err_posiciones_hamming"],"phase":1,"weight":1.1,"kind":"ejercicio","sourceId":"codes_hamming","subject":"arqui"},{"id":"arqui:x86_stack","title":"Dibujar un frame de stack con BP","topic":"tema_12_x86","nodes":["x86_stack","x86_marco_stack","x86_offsets_param","x86_retorno_stack"],"phase":2,"weight":1.5,"kind":"ejercicio","sourceId":"x86_stack","subject":"arqui"}]},{"date":"2026-07-14","tasks":[{"id":"arqui:x86_segments","title":"Segmentación y direccionamiento 8086","topic":"tema_12_x86","nodes":["x86_segmentos","x86_direccionamiento"],"phase":2,"weight":1.2,"kind":"procedimiento","sourceId":"x86_segments","subject":"arqui"},{"id":"arqui:x86_compile","title":"Traducir control de alto nivel a 8086","topic":"tema_12_x86","nodes":["x86_compilar"],"phase":2,"weight":1.2,"kind":"ejercicio","sourceId":"x86_compile","subject":"arqui"},{"id":"arqui:x86_stack_cost","title":"Calcular consumo máximo de stack","topic":"tema_12_x86","nodes":["x86_consumo","x86_stack_por_nivel","x86_stack_total"],"phase":3,"weight":1.4,"kind":"procedimiento","sourceId":"x86_stack_cost","subject":"arqui"}]},{"date":"2026-07-15","tasks":[{"id":"arqui:x86_recursion","title":"Programar una función recursiva","topic":"tema_12_x86","nodes":["x86_recursion","x86_caso_base","x86_llamada_rec"],"phase":3,"weight":1.5,"kind":"ejercicio","sourceId":"x86_recursion","subject":"arqui"},{"id":"arqui:x86_graphs","title":"Recorrer árbol o grafo usando stack","topic":"tema_12_x86","nodes":["x86_arboles","x86_recorrer_hijos"],"phase":3,"weight":1.5,"kind":"ejercicio","sourceId":"x86_graphs","subject":"arqui"},{"id":"arqui:mem_function","title":"Definir entradas, salidas y dirección","topic":"tema_07_memorias","nodes":["mem_funcion","mem_entradas_salidas","mem_direccion_concreta"],"phase":4,"weight":1.2,"kind":"procedimiento","sourceId":"mem_function","subject":"arqui"}]},{"date":"2026-07-16","tasks":[{"id":"arqui:mem_org","title":"Organización y arreglo de ROM","topic":"tema_07_memorias","nodes":["mem_capacidad","mem_bits_direccion","mem_arreglos","mem_cs_oe"],"phase":4,"weight":1.3,"kind":"ejercicio","sourceId":"mem_org","subject":"arqui"},{"id":"arqui:mem_load","title":"Programar una carga de ROM","topic":"tema_07_memorias","nodes":["mem_carga","mem_carga_bucle","mem_carga_flags"],"phase":4,"weight":1.5,"kind":"ejercicio","sourceId":"mem_load","subject":"arqui"},{"id":"arqui:io_handler","title":"Crear una rutina de interrupción","topic":"tema_13_io_interrupciones","nodes":["io_rutina","io_evento_estado_accion"],"phase":5,"weight":1.5,"kind":"ejercicio","sourceId":"io_handler","subject":"arqui"}]},{"date":"2026-07-17","tasks":[{"id":"arqui:io_programmed","title":"E/S programada, puertos y máscaras","topic":"tema_13_io_interrupciones","nodes":["io_programada","io_mascara_puerto"],"phase":5,"weight":1.1,"kind":"procedimiento","sourceId":"io_programmed","subject":"arqui"},{"id":"arqui:io_vector","title":"Instalar el vector de interrupción","topic":"tema_13_io_interrupciones","nodes":["io_vector","io_vector_direccion","io_segmento_offset"],"phase":5,"weight":1.4,"kind":"ejercicio","sourceId":"io_vector","subject":"arqui"},{"id":"arqui:io_context","title":"Preservar contexto y volver con IRET","topic":"tema_13_io_interrupciones","nodes":["io_contexto","io_push_pop"],"phase":5,"weight":1.2,"kind":"procedimiento","sourceId":"io_context","subject":"arqui"}]},{"date":"2026-07-18","tasks":[{"id":"arqui:io_timer","title":"Resolver timers, ticks y segundos","topic":"tema_13_io_interrupciones","nodes":["io_timers","io_ticks_segundos"],"phase":5,"weight":1.3,"kind":"ejercicio","sourceId":"io_timer","subject":"arqui"},{"id":"arqui:io_system","title":"Sistema completo con varias interrupciones","topic":"tema_13_io_interrupciones","nodes":["io_estados","io_estado_compartido","io_sistema","io_sistema_completo"],"phase":5,"weight":1.7,"kind":"desafio","sourceId":"io_system","subject":"arqui"},{"id":"arqui:fsm_design","title":"Diseñar una máquina de estados","topic":"tema_08_maquinas_estado","nodes":["fsm_estados","fsm_diagrama","fsm_tabla_completa","fsm_ecuaciones","fsm_circuito_final"],"phase":6,"weight":1.5,"kind":"ejercicio","sourceId":"fsm_design","subject":"arqui"}]},{"date":"2026-07-19","tasks":[{"id":"arqui:seq_ff","title":"Flip-flops, excitación y contadores","topic":"tema_09_circuitos_secuenciales","nodes":["seq_ff","seq_tabla_excitacion","seq_contadores","seq_modulo"],"phase":6,"weight":1.2,"kind":"ejercicio","sourceId":"seq_ff","subject":"arqui"},{"id":"arqui:cache_fields","title":"Calcular tag, conjunto y offset","topic":"tema_14_jerarquia_memoria","nodes":["cache_campos","cache_offset_bits","cache_sets_bits","cache_tag_bits"],"phase":6,"weight":1.2,"kind":"procedimiento","sourceId":"cache_fields","subject":"arqui"},{"id":"arqui:cache_trace","title":"Simular hits y misses de una traza","topic":"tema_14_jerarquia_memoria","nodes":["cache_mapeo","cache_simular","cache_traza","cache_tasa","cache_localidad"],"phase":6,"weight":1.5,"kind":"ejercicio","sourceId":"cache_trace","subject":"arqui"},{"id":"arqui:cpu_cycle","title":"Ciclo de instrucción y señales de control","topic":"tema_11_cpu","nodes":["cpu_ciclo","cpu_fetch","cpu_control","cpu_senales"],"phase":6,"weight":1.2,"kind":"repaso","sourceId":"cpu_cycle","subject":"arqui"}]},{"date":"2026-07-20","tasks":[{"id":"arqui:mlg_format","title":"Formato y largo de instrucción","topic":"tema_10_maquina_logica","nodes":["mlg_formato","mlg_campos","mlg_largo_instruccion"],"phase":6,"weight":1.1,"kind":"ejercicio","sourceId":"mlg_format","subject":"arqui"},{"id":"arqui:pipeline","title":"Pipeline, hazards y stalls","topic":"tema_15_pipeline","nodes":["pipe_etapas","pipe_datos","pipe_forwarding","pipe_insertar_stall","pipe_prediccion"],"phase":7,"weight":1.3,"kind":"repaso","sourceId":"pipeline","subject":"arqui"},{"id":"arqui:superscalar","title":"Superescalares, renaming y commit","topic":"tema_16_superescalares","nodes":["super_ilp","super_war_waw","super_rename","super_commit"],"phase":7,"weight":1.1,"kind":"repaso","sourceId":"superscalar","subject":"arqui"},{"id":"arqui:mixed_exam_2","title":"Corregir errores y repetir un ejercicio","topic":"","nodes":[],"phase":8,"weight":1.4,"kind":"practica","sourceId":"mixed_exam_2","subject":"arqui"}]},{"date":"2026-07-21","tasks":[{"id":"arqui:mixed_exam_1","title":"Resolver dos ejercicios mezclados de examen","topic":"","nodes":[],"phase":8,"weight":1.6,"kind":"practica","sourceId":"mixed_exam_1","subject":"arqui"},{"id":"arqui:simulation_1","title":"Simulacro completo 1","topic":"","nodes":[],"phase":9,"weight":2,"kind":"simulacro","sourceId":"simulation_1","subject":"arqui"}]},{"date":"2026-07-22","tasks":[{"id":"arqui:simulation_2","title":"Simulacro final y repaso de dudas","topic":"","nodes":[],"phase":9,"weight":2,"kind":"simulacro","sourceId":"simulation_2","subject":"arqui"}]}],"soDays":[{"date":"2026-07-13","day_number":1,"focus":"Diagnóstico y mapa general","skill_ids":["skill_services","skill_kernel_arch","skill_system_call"],"recommended_exercise_ids":["ex_2026_05_eda9dfa39d","ex_2025_12_9a74251870","ex_2025_05_e336d2a082","ex_2022_05_bf113714e8","ex_2025_07_aba6ef00f7","ex_2025_07_9314beff04"],"estimated_minutes":150,"tasks":["Repaso activo con tarjetas.","Resolver ejercicios sin mirar la solución.","Corregir con solución oficial y registrar errores."],"mastery_checkpoint":"Al menos 70 % de los incisos correctos y explicación oral del procedimiento."},{"date":"2026-07-14","day_number":2,"focus":"Procesos, fork y threads","skill_ids":["skill_process_states","skill_pcb_context","skill_fork_tree","skill_threads"],"recommended_exercise_ids":["ex_2026_02_52d3e8641e","ex_2026_05_eda9dfa39d","ex_2025_02_4d433bd917","ex_2025_05_e336d2a082","ex_2026_02_44c345a127","ex_2026_05_a09e9d7a73"],"estimated_minutes":150,"tasks":["Repaso activo con tarjetas.","Resolver ejercicios sin mirar la solución.","Corregir con solución oficial y registrar errores."],"mastery_checkpoint":"Al menos 70 % de los incisos correctos y explicación oral del procedimiento."},{"date":"2026-07-15","day_number":3,"focus":"Planificación básica","skill_ids":["skill_schedule_timeline","skill_fcfs_sjf_rr","skill_metrics"],"recommended_exercise_ids":["ex_2026_02_52d3e8641e","ex_2026_02_44c345a127","ex_2026_05_1ca033078b","ex_2025_05_8b8d424e10","ex_2026_02_b66be7f045","ex_2026_05_eda9dfa39d"],"estimated_minutes":150,"tasks":["Repaso activo con tarjetas.","Resolver ejercicios sin mirar la solución.","Corregir con solución oficial y registrar errores."],"mastery_checkpoint":"Al menos 70 % de los incisos correctos y explicación oral del procedimiento."},{"date":"2026-07-16","day_number":4,"focus":"Planificación avanzada","skill_ids":["skill_mlfq","skill_multiprocessor_sched"],"recommended_exercise_ids":["ex_2026_05_1ca033078b","ex_2025_07_aba6ef00f7","ex_2022_12_d27b54fb34","ex_2021_07_380fc302ad"],"estimated_minutes":150,"tasks":["Repaso activo con tarjetas.","Resolver ejercicios sin mirar la solución.","Corregir con solución oficial y registrar errores."],"mastery_checkpoint":"Al menos 70 % de los incisos correctos y explicación oral del procedimiento."},{"date":"2026-07-17","day_number":5,"focus":"Semáforos y precedencias","skill_ids":["skill_precedence","skill_semaphores"],"recommended_exercise_ids":["ex_2026_02_44c345a127","ex_2026_05_eda9dfa39d","ex_2025_07_112d98f8ee","ex_2024_05_c179cc7d1d"],"estimated_minutes":150,"tasks":["Repaso activo con tarjetas.","Resolver ejercicios sin mirar la solución.","Corregir con solución oficial y registrar errores."],"mastery_checkpoint":"Al menos 70 % de los incisos correctos y explicación oral del procedimiento."},{"date":"2026-07-18","day_number":6,"focus":"Monitores","skill_ids":["skill_monitors"],"recommended_exercise_ids":["ex_2026_02_52d3e8641e","ex_2026_02_44c345a127"],"estimated_minutes":150,"tasks":["Repaso activo con tarjetas.","Resolver ejercicios sin mirar la solución.","Corregir con solución oficial y registrar errores."],"mastery_checkpoint":"Al menos 70 % de los incisos correctos y explicación oral del procedimiento."},{"date":"2026-07-19","day_number":7,"focus":"Mailboxes y Ada","skill_ids":["skill_mailboxes","skill_ada"],"recommended_exercise_ids":["ex_2026_02_44c345a127","ex_2025_07_112d98f8ee","ex_2026_02_52d3e8641e","ex_2026_02_b66be7f045"],"estimated_minutes":150,"tasks":["Repaso activo con tarjetas.","Resolver ejercicios sin mirar la solución.","Corregir con solución oficial y registrar errores."],"mastery_checkpoint":"Al menos 70 % de los incisos correctos y explicación oral del procedimiento."},{"date":"2026-07-20","day_number":8,"focus":"Deadlock y repaso de concurrencia","skill_ids":["skill_deadlock","skill_semaphores","skill_monitors"],"recommended_exercise_ids":["ex_2026_02_52d3e8641e","ex_2026_02_44c345a127","ex_2025_07_112d98f8ee","ex_2024_05_c179cc7d1d","ex_2026_05_eda9dfa39d","ex_2026_05_a09e9d7a73"],"estimated_minutes":150,"tasks":["Repaso activo con tarjetas.","Resolver ejercicios sin mirar la solución.","Corregir con solución oficial y registrar errores."],"mastery_checkpoint":"Al menos 70 % de los incisos correctos y explicación oral del procedimiento."},{"date":"2026-07-21","day_number":9,"focus":"Memoria: formatos y tablas","skill_ids":["skill_page_format","skill_multilevel_pt"],"recommended_exercise_ids":["ex_2026_02_52d3e8641e","ex_2026_02_44c345a127","ex_2026_05_a09e9d7a73","ex_2025_02_4d433bd917"],"estimated_minutes":150,"tasks":["Repaso activo con tarjetas.","Resolver ejercicios sin mirar la solución.","Corregir con solución oficial y registrar errores."],"mastery_checkpoint":"Al menos 70 % de los incisos correctos y explicación oral del procedimiento."},{"date":"2026-07-22","day_number":10,"focus":"Memoria: TLB y fallos","skill_ids":["skill_mmu_tlb","skill_page_fault"],"recommended_exercise_ids":["ex_2026_02_52d3e8641e","ex_2026_05_eda9dfa39d","ex_2025_02_9030b1aa44","ex_2025_07_a0d6a2d33a"],"estimated_minutes":150,"tasks":["Repaso activo con tarjetas.","Resolver ejercicios sin mirar la solución.","Corregir con solución oficial y registrar errores."],"mastery_checkpoint":"Al menos 70 % de los incisos correctos y explicación oral del procedimiento."},{"date":"2026-07-23","day_number":11,"focus":"Reemplazo y thrashing","skill_ids":["skill_replacement","skill_thrashing"],"recommended_exercise_ids":["ex_2026_02_52d3e8641e","ex_2025_02_9030b1aa44","ex_2020_08_fefa46e3e6","ex_2019_07_96782b89da"],"estimated_minutes":150,"tasks":["Repaso activo con tarjetas.","Resolver ejercicios sin mirar la solución.","Corregir con solución oficial y registrar errores."],"mastery_checkpoint":"Al menos 70 % de los incisos correctos y explicación oral del procedimiento."},{"date":"2026-07-24","day_number":12,"focus":"Sistemas de archivos: cotas","skill_ids":["skill_fs_limits","skill_inode_traverse"],"recommended_exercise_ids":["ex_2026_02_b66be7f045","ex_2025_02_4d433bd917","ex_2025_07_5acbc86470","ex_2025_07_6b89c76b49"],"estimated_minutes":150,"tasks":["Repaso activo con tarjetas.","Resolver ejercicios sin mirar la solución.","Corregir con solución oficial y registrar errores."],"mastery_checkpoint":"Al menos 70 % de los incisos correctos y explicación oral del procedimiento."},{"date":"2026-07-25","day_number":13,"focus":"Sistemas de archivos: FAT y caminos","skill_ids":["skill_fat_traverse","skill_path_resolution"],"recommended_exercise_ids":["ex_2026_02_b66be7f045","ex_2025_02_9030b1aa44","ex_2025_07_6b89c76b49","ex_2025_12_9a74251870"],"estimated_minutes":150,"tasks":["Repaso activo con tarjetas.","Resolver ejercicios sin mirar la solución.","Corregir con solución oficial y registrar errores."],"mastery_checkpoint":"Al menos 70 % de los incisos correctos y explicación oral del procedimiento."},{"date":"2026-07-26","day_number":14,"focus":"Operaciones y consistencia","skill_ids":["skill_fs_operations","skill_hardlinks","skill_free_space"],"recommended_exercise_ids":["ex_2025_05_e336d2a082","ex_2025_07_6b89c76b49","ex_2024_02_f2c2685130","ex_2024_07_90a9507dcf","ex_2026_02_b66be7f045","ex_2024_12_1602290f36"],"estimated_minutes":150,"tasks":["Repaso activo con tarjetas.","Resolver ejercicios sin mirar la solución.","Corregir con solución oficial y registrar errores."],"mastery_checkpoint":"Al menos 70 % de los incisos correctos y explicación oral del procedimiento."},{"date":"2026-07-27","day_number":15,"focus":"Disco, RAID y E/S","skill_ids":["skill_disk_sched","skill_raid","skill_io_methods","skill_io_services"],"recommended_exercise_ids":["ex_2025_02_9030b1aa44","ex_2024_02_98c2cc677d","ex_2025_02_4d433bd917","ex_2025_07_5acbc86470","ex_2026_05_eda9dfa39d","ex_2025_07_aba6ef00f7"],"estimated_minutes":180,"tasks":["Repaso activo con tarjetas.","Resolver ejercicios sin mirar la solución.","Corregir con solución oficial y registrar errores."],"mastery_checkpoint":"Al menos 70 % de los incisos correctos y explicación oral del procedimiento."},{"date":"2026-07-28","day_number":16,"focus":"Seguridad, virtualización y simulacro","skill_ids":["skill_protection","skill_crypto_auth","skill_hypervisors","skill_binary_translation"],"recommended_exercise_ids":["ex_2026_05_eda9dfa39d","ex_2025_12_9a74251870","ex_2025_02_9030b1aa44","ex_2025_05_e336d2a082","ex_2025_07_aba6ef00f7","ex_2024_07_f9e8562c88"],"estimated_minutes":180,"tasks":["Repaso activo con tarjetas.","Resolver ejercicios sin mirar la solución.","Corregir con solución oficial y registrar errores."],"mastery_checkpoint":"Al menos 70 % de los incisos correctos y explicación oral del procedimiento."},{"date":"2026-07-29","day_number":17,"focus":"Examen","skill_ids":[],"recommended_exercise_ids":[],"estimated_minutes":30,"tasks":["Repaso breve de fórmulas, convenciones y errores frecuentes.","No incorporar temas nuevos."],"mastery_checkpoint":"Llegar con procedimientos y criterios de verificación automatizados."}]};
 
 const STORAGE_KEY = "unified_study_plan_v1";
 const ARQUI_STORAGE_KEY = "arqui_exam_dashboard_v3";
 const SO_STORAGE_KEY = "studyDashboard_sistemas_operativos_v1";
+const PLAN_START_DATE = "2026-07-12";
+const PLAN_END_DATE = "2026-07-29";
 
 const SUBJECTS = {
   arqui: {
@@ -18,6 +20,43 @@ const SUBJECTS = {
   }
 };
 
+const ARQUI_TASK_SUMMARIES = {
+  "arqui:intro_model": "Ubicar CPU, memoria y E/S, y explicar cómo se conectan.",
+  "arqui:num_bin_hex": "Convertir valores en ambos sentidos y comprobar el resultado.",
+  "arqui:codes_hamming": "Calcular bits de paridad, detectar el error y corregirlo.",
+  "arqui:rep_c2_flags": "Operar en complemento a 2 y justificar las banderas obtenidas.",
+  "arqui:rep_ieee": "Normalizar el valor y completar signo, exponente y mantisa.",
+  "arqui:bool_kmap": "Agrupar unos, minimizar la función y verificar la expresión final.",
+  "arqui:comb_design": "Obtener la función e implementarla con MUX o decodificador.",
+  "arqui:x86_segments": "Calcular direcciones físicas e identificar segmentos implícitos.",
+  "arqui:x86_stack": "Dibujar el stack y marcar parámetros, retorno, BP y variables locales.",
+  "arqui:x86_compile": "Pasar condiciones y bucles a saltos y comparaciones en 8086.",
+  "arqui:x86_recursion": "Definir caso base, llamada recursiva y preservación del contexto.",
+  "arqui:x86_graphs": "Representar el recorrido y controlar el uso del stack en cada llamada.",
+  "arqui:x86_stack_cost": "Calcular bytes por nivel y multiplicarlos por la profundidad máxima.",
+  "arqui:mem_org": "Determinar capacidad, líneas de dirección y conexión entre chips.",
+  "arqui:mem_function": "Identificar entradas, salidas y la dirección correspondiente a cada dato.",
+  "arqui:mem_load": "Escribir el recorrido de carga y controlar direcciones, datos y banderas.",
+  "arqui:io_programmed": "Leer o escribir puertos aplicando las máscaras necesarias.",
+  "arqui:io_handler": "Separar evento, estado y acción dentro de la rutina de servicio.",
+  "arqui:io_context": "Guardar los registros usados y restaurarlos antes de ejecutar IRET.",
+  "arqui:io_vector": "Calcular segmento y offset e instalar correctamente el vector.",
+  "arqui:io_timer": "Relacionar frecuencia, ticks y tiempo, y actualizar el contador.",
+  "arqui:io_system": "Integrar vectores, rutinas, estado compartido y programa principal.",
+  "arqui:cache_fields": "Separar la dirección en tag, conjunto y offset.",
+  "arqui:cache_trace": "Recorrer la traza y registrar hits, misses y reemplazos.",
+  "arqui:fsm_design": "Definir estados, tabla, ecuaciones y circuito final.",
+  "arqui:seq_ff": "Completar excitaciones y diseñar el contador o secuencial pedido.",
+  "arqui:mlg_format": "Calcular campos, cantidad de códigos y largo de instrucción.",
+  "arqui:cpu_cycle": "Seguir fetch, decodificación y ejecución indicando señales de control.",
+  "arqui:pipeline": "Detectar hazards y decidir forwarding, stalls o predicción.",
+  "arqui:superscalar": "Distinguir dependencias, renaming, ejecución y commit en orden.",
+  "arqui:mixed_exam_1": "Resolver sin apuntes y anotar los errores que se repiten.",
+  "arqui:mixed_exam_2": "Corregir el procedimiento y repetir el ejercicio desde cero.",
+  "arqui:simulation_1": "Resolver un examen completo con tiempo y corrección posterior.",
+  "arqui:simulation_2": "Hacer el último simulacro y repasar únicamente los errores detectados."
+};
+
 const elements = {
   calendar: document.querySelector("#calendar"),
   emptyState: document.querySelector("#emptyState"),
@@ -27,6 +66,7 @@ const elements = {
   progressBar: document.querySelector("#progressBar"),
   snapshotDescription: document.querySelector("#snapshotDescription"),
   updateButton: document.querySelector("#updatePlanButton"),
+  addTaskButton: document.querySelector("#addTaskButton"),
   updateDialog: document.querySelector("#updateDialog"),
   confirmUpdateButton: document.querySelector("#confirmUpdateButton"),
   restoreInitialButton: document.querySelector("#restoreInitialButton"),
@@ -35,28 +75,74 @@ const elements = {
   moveTaskTitle: document.querySelector("#moveTaskTitle"),
   moveTaskDateSelect: document.querySelector("#moveTaskDateSelect"),
   confirmMoveTaskButton: document.querySelector("#confirmMoveTaskButton"),
+  addTaskDialog: document.querySelector("#addTaskDialog"),
+  addTaskForm: document.querySelector("#addTaskForm"),
+  addTaskDateSelect: document.querySelector("#addTaskDateSelect"),
+  addTaskSubject: document.querySelector("#addTaskSubject"),
+  addTaskTitle: document.querySelector("#addTaskTitle"),
+  addTaskMinutes: document.querySelector("#addTaskMinutes"),
+  addTaskDetails: document.querySelector("#addTaskDetails"),
+  confirmAddTaskButton: document.querySelector("#confirmAddTaskButton"),
+  deleteTaskDialog: document.querySelector("#deleteTaskDialog"),
+  deleteTaskTitle: document.querySelector("#deleteTaskTitle"),
+  confirmDeleteTaskButton: document.querySelector("#confirmDeleteTaskButton"),
+  updateFromDate: document.querySelector("#updateFromDate"),
+  deletedSection: document.querySelector("#deletedSection"),
+  deletedCount: document.querySelector("#deletedCount"),
+  deletedTasks: document.querySelector("#deletedTasks"),
   toast: document.querySelector("#toast"),
   canvas: document.querySelector("#fluidCanvas")
 };
 
 let activeFilter = "all";
 let movingTaskId = null;
+let deletingTaskId = null;
 let state = loadState();
 
 function clone(value) {
   return JSON.parse(JSON.stringify(value));
 }
 
+function defaultTaskRecord(taskId) {
+  for (const day of DEFAULT_DAYS) {
+    const task = day.tasks.find((item) => item.id === taskId);
+    if (task) return { task: clone(task), date: day.date };
+  }
+
+  return null;
+}
+
+function normalizeDeletedEntries(deleted) {
+  return Object.fromEntries(
+    Object.entries(deleted).flatMap(([taskId, value]) => {
+      if (value && typeof value === "object" && value.task && value.date) {
+        return [[taskId, value]];
+      }
+
+      const fallback = defaultTaskRecord(taskId);
+      if (!fallback) return [];
+
+      return [[taskId, {
+        ...fallback,
+        completed: false,
+        deletedAt: new Date().toISOString()
+      }]];
+    })
+  );
+}
+
 function initialState() {
   return {
-    version: 1,
+    version: 4,
     snapshot: {
       kind: "curated",
       createdAt: new Date().toISOString(),
+      startDate: PLAN_START_DATE,
       sourceLabel: "Distribución unificada inicial",
       days: clone(DEFAULT_DAYS)
     },
-    completed: {}
+    completed: {},
+    deleted: {}
   };
 }
 
@@ -70,6 +156,10 @@ function loadState() {
       Array.isArray(saved.snapshot.days)
     ) {
       saved.completed = saved.completed || {};
+      saved.deleted = normalizeDeletedEntries(saved.deleted || {});
+      saved.snapshot.startDate ||=
+        saved.snapshot.days[0]?.date || PLAN_START_DATE;
+      saved.version = 4;
       return saved;
     }
   } catch (error) {
@@ -176,6 +266,7 @@ function render() {
   renderSummary();
   renderSnapshot();
   renderCalendar();
+  renderDeletedTasks();
 }
 
 function renderSnapshot() {
@@ -188,7 +279,7 @@ function renderSnapshot() {
   });
 
   const manualEdit = snapshot.lastManualEditAt
-    ? ` · último movimiento ${new Date(snapshot.lastManualEditAt).toLocaleString("es-UY", {
+    ? ` · último ajuste ${new Date(snapshot.lastManualEditAt).toLocaleString("es-UY", {
         day: "2-digit",
         month: "short",
         hour: "2-digit",
@@ -198,7 +289,7 @@ function renderSnapshot() {
 
   elements.snapshotDescription.textContent =
     `${snapshot.sourceLabel} · guardada ${created}${manualEdit}. ` +
-    "Mover o completar un bloque no redistribuye los demás.";
+    "Mover, agregar, eliminar o completar un bloque no redistribuye los demás.";
 }
 
 function renderSummary() {
@@ -283,18 +374,95 @@ function renderCalendar() {
     });
   });
 
+  document.querySelectorAll("[data-delete-task-id]").forEach((button) => {
+    button.addEventListener("click", () => {
+      openDeleteTaskDialog(button.dataset.deleteTaskId);
+    });
+  });
+
   attachFluidInteractions();
 }
 
-function taskHtml(task) {
-  const subject = SUBJECTS[task.subject];
-  const done = isTaskDone(task.id);
+function deletedTaskRecords() {
+  return Object.entries(state.deleted)
+    .filter(([, record]) => record && record.task && record.date)
+    .map(([taskId, record]) => ({ taskId, ...record }))
+    .sort((a, b) =>
+      a.date.localeCompare(b.date) ||
+      String(a.deletedAt || "").localeCompare(String(b.deletedAt || ""))
+    );
+}
 
-  const canMove = task.kind !== "examen";
+function renderDeletedTasks() {
+  const records = deletedTaskRecords();
+
+  elements.deletedSection.hidden = records.length === 0;
+  elements.deletedCount.textContent =
+    `${records.length} bloque${records.length === 1 ? "" : "s"}`;
+  elements.deletedTasks.replaceChildren();
+
+  records.forEach((record) => {
+    const subject = SUBJECTS[record.task.subject] || SUBJECTS.arqui;
+    const article = document.createElement("article");
+    const summary = taskSummary(record.task);
+
+    article.className = "deleted-task";
+    article.style.setProperty("--subject-color", subject.color);
+    article.innerHTML = `
+      <div class="deleted-task__main">
+        <span class="deleted-task__labels">
+          <span class="subject-chip">${subject.label}</span>
+          ${record.task.manual ? `<span class="manual-chip">manual</span>` : ""}
+        </span>
+        <strong>${escapeHtml(record.task.title)}</strong>
+        <small>${escapeHtml(summary)}</small>
+      </div>
+
+      <div class="deleted-task__meta">
+        <span>${shortDateLabel(record.date)} · ${formatDuration(Number(record.task.minutes || 0))}</span>
+        <button
+          type="button"
+          class="restore-task-button"
+          data-restore-task-id="${escapeHtml(record.taskId)}"
+        >Restaurar</button>
+      </div>
+    `;
+
+    elements.deletedTasks.append(article);
+  });
+
+  document.querySelectorAll("[data-restore-task-id]").forEach((button) => {
+    button.addEventListener("click", () => {
+      restoreDeletedTask(button.dataset.restoreTaskId);
+    });
+  });
+}
+
+function taskSummary(task) {
+  const importedPlaceholder =
+    "Bloque importado del plan de Arquitectura de Computadoras.";
+
+  if (task.manual) {
+    return task.details || "Completar el bloque y registrar dudas o errores.";
+  }
+
+  if (task.details && task.details !== importedPlaceholder) {
+    return task.details;
+  }
+
+  return ARQUI_TASK_SUMMARIES[task.id] ||
+    "Completar la actividad y verificar el procedimiento.";
+}
+
+function taskHtml(task) {
+  const subject = SUBJECTS[task.subject] || SUBJECTS.arqui;
+  const done = isTaskDone(task.id);
+  const canEdit = task.kind !== "examen";
+  const summary = taskSummary(task);
 
   return `
     <div
-      class="task ${done ? "done" : ""}"
+      class="task ${done ? "done" : ""} ${task.manual ? "manual" : ""}"
       style="--subject-color:${subject.color}"
     >
       <input
@@ -306,21 +474,29 @@ function taskHtml(task) {
 
       <span class="task-main">
         <strong>${escapeHtml(task.title)}</strong>
-        <small title="${escapeHtml(task.details || "")}">
-          ${escapeHtml(task.details || task.kind || "")}
+        <small title="${escapeHtml(summary)}">
+          ${escapeHtml(summary)}
         </small>
       </span>
 
       <span class="task-meta">
-        <span class="subject-chip">${subject.label}</span>
+        <span class="task-labels">
+          <span class="subject-chip">${subject.label}</span>
+          ${task.manual ? `<span class="manual-chip" title="Agregado manualmente">manual</span>` : ""}
+        </span>
         <span>${formatDuration(Number(task.minutes || 0))}</span>
         <span class="task-actions">
-          ${canMove ? `
+          ${canEdit ? `
             <button
               type="button"
               class="move-task-button"
               data-move-task-id="${escapeHtml(task.id)}"
             >Mover</button>
+            <button
+              type="button"
+              class="delete-task-button"
+              data-delete-task-id="${escapeHtml(task.id)}"
+            >Eliminar</button>
           ` : ""}
           <a href="${task.href || subject.href}">Abrir ↗</a>
         </span>
@@ -345,15 +521,15 @@ function findTaskLocation(taskId) {
   return null;
 }
 
+function activePlanStartDate() {
+  return state.snapshot.startDate ||
+    state.snapshot.days[0]?.date ||
+    PLAN_START_DATE;
+}
+
 function planDateOptions() {
-  const dates = state.snapshot.days
-    .map((day) => day.date)
-    .filter(Boolean)
-    .sort();
-
-  if (!dates.length) return [];
-
-  return isoRange(dates[0], dates[dates.length - 1]);
+  const start = activePlanStartDate();
+  return start <= PLAN_END_DATE ? isoRange(start, PLAN_END_DATE) : [];
 }
 
 function dayLoadLabel(date) {
@@ -417,6 +593,132 @@ function moveTaskToDate(taskId, targetDate) {
   return true;
 }
 
+function fillDateSelect(select, selectedDate = todayISO()) {
+  select.replaceChildren();
+
+  planDateOptions().forEach((date) => {
+    const option = document.createElement("option");
+    option.value = date;
+    option.textContent = `${dateLabel(date)} — ${dayLoadLabel(date)}`;
+    option.selected = date === selectedDate;
+    select.append(option);
+  });
+}
+
+function openAddTaskDialog() {
+  elements.addTaskForm.reset();
+  elements.addTaskMinutes.value = "60";
+  fillDateSelect(
+    elements.addTaskDateSelect,
+    planDateOptions().includes(todayISO()) ? todayISO() : planDateOptions()[0]
+  );
+  elements.addTaskDialog.showModal();
+  elements.addTaskTitle.focus();
+}
+
+function addManualTask({ date, subject, title, minutes, details }) {
+  if (!date || !SUBJECTS[subject] || !title.trim()) return false;
+
+  let targetDay = state.snapshot.days.find((day) => day.date === date);
+
+  if (!targetDay) {
+    targetDay = { date, tasks: [] };
+    state.snapshot.days.push(targetDay);
+  }
+
+  const normalizedMinutes = Math.max(0, Number(minutes) || 0);
+  const id = `manual:${Date.now()}:${Math.random().toString(36).slice(2, 8)}`;
+
+  targetDay.tasks.push({
+    id,
+    subject,
+    title: title.trim(),
+    minutes: normalizedMinutes,
+    kind: "manual",
+    sourceDate: date,
+    href: SUBJECTS[subject].href,
+    details: details.trim(),
+    manual: true
+  });
+
+  state.snapshot.days.sort((a, b) => a.date.localeCompare(b.date));
+  state.snapshot.lastManualEditAt = new Date().toISOString();
+  saveState();
+  render();
+  showToast(`Bloque agregado al ${shortDateLabel(date)}.`);
+  return true;
+}
+
+function openDeleteTaskDialog(taskId) {
+  const location = findTaskLocation(taskId);
+
+  if (!location || location.task.kind === "examen") return;
+
+  deletingTaskId = taskId;
+  elements.deleteTaskTitle.textContent = location.task.title;
+  elements.deleteTaskDialog.showModal();
+}
+
+function deleteTask(taskId) {
+  const location = findTaskLocation(taskId);
+
+  if (!location || location.task.kind === "examen") return false;
+
+  const title = location.task.title;
+  state.deleted[taskId] = {
+    task: clone(location.task),
+    date: location.day.date,
+    completed: isTaskDone(taskId),
+    deletedAt: new Date().toISOString()
+  };
+
+  location.day.tasks.splice(location.taskIndex, 1);
+  delete state.completed[taskId];
+  state.snapshot.days = state.snapshot.days.filter((day) => day.tasks.length);
+  state.snapshot.lastManualEditAt = new Date().toISOString();
+  saveState();
+  render();
+  showToast(`Se eliminó “${title}”. Podés restaurarlo al final del calendario.`);
+  return true;
+}
+
+function restoreDeletedTask(taskId) {
+  const record = state.deleted[taskId];
+
+  if (!record || !record.task || !record.date) return false;
+  if (findTaskLocation(taskId)) {
+    delete state.deleted[taskId];
+    saveState();
+    render();
+    return false;
+  }
+
+  const targetDate = record.date < activePlanStartDate()
+    ? activePlanStartDate()
+    : record.date;
+  let targetDay = state.snapshot.days.find((day) => day.date === targetDate);
+
+  if (!targetDay) {
+    targetDay = { date: targetDate, tasks: [] };
+    state.snapshot.days.push(targetDay);
+  }
+
+  targetDay.tasks.push({
+    ...clone(record.task),
+    sourceDate: record.task.sourceDate || record.date
+  });
+  state.snapshot.days.sort((a, b) => a.date.localeCompare(b.date));
+
+  if (record.completed) state.completed[taskId] = true;
+  delete state.deleted[taskId];
+  state.snapshot.lastManualEditAt = new Date().toISOString();
+
+  saveState();
+  render();
+  showToast(`Se restauró “${record.task.title}” en ${shortDateLabel(targetDate)}.`);
+  return true;
+}
+
 function escapeHtml(value = "") {
   return String(value).replace(/[&<>"']/g, (character) => ({
     "&": "&amp;",
@@ -467,7 +769,8 @@ function sourceArquiTask(sourceId) {
     kind: module.kind,
     sourceDate: "",
     href: "/arqui/",
-    details: "Bloque importado del plan de Arquitectura de Computadoras."
+    details: ARQUI_TASK_SUMMARIES[`arqui:${sourceId}`] ||
+      "Completar la actividad y verificar el procedimiento."
   };
 }
 
@@ -548,19 +851,33 @@ function isoRange(start, end) {
 }
 
 function rebuildFromCurrentSources() {
+  const cutoff = todayISO();
+  const updateStart = cutoff < PLAN_START_DATE ? PLAN_START_DATE : cutoff;
+  const manualTasks = state.snapshot.days.flatMap((day) =>
+    day.date >= updateStart
+      ? day.tasks
+          .filter((task) => task.manual)
+          .map((task) => ({ ...clone(task), manualDate: day.date }))
+      : []
+  );
   const arquiDays = readArquiDays();
   const soTasks = readSoTasks();
-  const dates = isoRange("2026-07-12", "2026-07-29");
+  const dates = updateStart <= PLAN_END_DATE
+    ? isoRange(updateStart, PLAN_END_DATE)
+    : [];
   const buckets = Object.fromEntries(
     dates.map((date) => [date, []])
   );
 
   arquiDays.forEach((day) => {
-    if (!buckets[day.date]) buckets[day.date] = [];
-
     day.tasks.forEach((task) => {
-      if (!task) return;
-      buckets[day.date].push({
+      if (!task || state.deleted[task.id]) return;
+
+      const targetDate = day.date < updateStart ? updateStart : day.date;
+      if (targetDate > PLAN_END_DATE) return;
+      if (!buckets[targetDate]) buckets[targetDate] = [];
+
+      buckets[targetDate].push({
         ...task,
         sourceDate: day.date
       });
@@ -568,16 +885,19 @@ function rebuildFromCurrentSources() {
   });
 
   const capacity = 340;
-  let lastAssigned = "2026-07-13";
+  let lastAssigned = updateStart;
 
   soTasks.forEach((task) => {
-    const sourceDate = task.sourceDate || lastAssigned;
-    const earliest =
-      sourceDate > lastAssigned ? sourceDate : lastAssigned;
+    if (state.deleted[task.id]) return;
+
+    const sourceDate = task.sourceDate || updateStart;
+    const earliest = [sourceDate, lastAssigned, updateStart]
+      .sort()
+      .at(-1);
     const candidates = dates.filter(
       (date) =>
         date >= earliest &&
-        date < "2026-07-29" &&
+        date < PLAN_END_DATE &&
         date !== "2026-07-23"
     );
 
@@ -602,25 +922,39 @@ function rebuildFromCurrentSources() {
         .sort((a, b) => a.load - b.load)[0]?.date;
     }
 
-    selected ||= "2026-07-28";
+    selected ||= dates.find((date) => date < PLAN_END_DATE) || PLAN_END_DATE;
+    if (!buckets[selected]) buckets[selected] = [];
     buckets[selected].push(task);
     lastAssigned = selected;
   });
 
-  buckets["2026-07-23"] = [
-    examTask(
-      "arqui",
-      "Examen de Arquitectura de Computadoras",
-      "/arqui/"
-    )
-  ];
-  buckets["2026-07-29"] = [
-    examTask(
-      "so",
-      "Examen de Sistemas Operativos",
-      "/so/"
-    )
-  ];
+  if ("2026-07-23" >= updateStart && "2026-07-23" <= PLAN_END_DATE) {
+    buckets["2026-07-23"] = [
+      examTask(
+        "arqui",
+        "Examen de Arquitectura de Computadoras",
+        "/arqui/"
+      )
+    ];
+  }
+
+  if ("2026-07-29" >= updateStart && "2026-07-29" <= PLAN_END_DATE) {
+    buckets["2026-07-29"] = [
+      examTask(
+        "so",
+        "Examen de Sistemas Operativos",
+        "/so/"
+      )
+    ];
+  }
+
+  manualTasks.forEach((task) => {
+    const date = task.manualDate || task.sourceDate;
+    if (date < updateStart || state.deleted[task.id]) return;
+    if (!buckets[date]) buckets[date] = [];
+    const { manualDate, ...storedTask } = task;
+    buckets[date].push(storedTask);
+  });
 
   const days = Object.entries(buckets)
     .filter(([, tasks]) => tasks.length)
@@ -630,7 +964,8 @@ function rebuildFromCurrentSources() {
   state.snapshot = {
     kind: "local-sources",
     createdAt: new Date().toISOString(),
-    sourceLabel: "Actualizado manualmente desde Arqui y SO",
+    startDate: updateStart,
+    sourceLabel: `Plan vigente desde ${shortDateLabel(updateStart)}`,
     days
   };
 
@@ -648,7 +983,9 @@ function rebuildFromCurrentSources() {
   activeFilter = "all";
   updateFilterButtons();
   render();
-  showToast("Plan actualizado. La nueva distribución volvió a quedar fija.");
+  showToast(
+    `Plan reconstruido desde ${shortDateLabel(updateStart)}. Se quitaron los días anteriores.`
+  );
 }
 
 function examTask(subject, title, href) {
@@ -712,6 +1049,7 @@ elements.showAllButton.addEventListener("click", () => {
 });
 
 elements.updateButton.addEventListener("click", () => {
+  elements.updateFromDate.textContent = dateLabel(todayISO());
   elements.updateDialog.showModal();
 });
 
@@ -725,6 +1063,33 @@ elements.restoreInitialButton.addEventListener("click", (event) => {
   event.preventDefault();
   elements.updateDialog.close();
   restoreInitial();
+});
+
+elements.addTaskButton.addEventListener("click", openAddTaskDialog);
+
+elements.addTaskForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const added = addManualTask({
+    date: elements.addTaskDateSelect.value,
+    subject: elements.addTaskSubject.value,
+    title: elements.addTaskTitle.value,
+    minutes: elements.addTaskMinutes.value,
+    details: elements.addTaskDetails.value
+  });
+
+  if (added) elements.addTaskDialog.close();
+});
+
+elements.confirmDeleteTaskButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  deleteTask(deletingTaskId);
+  elements.deleteTaskDialog.close();
+  deletingTaskId = null;
+});
+
+elements.deleteTaskDialog.addEventListener("close", () => {
+  deletingTaskId = null;
 });
 
 elements.confirmMoveTaskButton.addEventListener("click", (event) => {

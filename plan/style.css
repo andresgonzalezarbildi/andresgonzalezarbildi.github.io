@@ -109,7 +109,9 @@ button {
 }
 
 .text-button,
-.update-button {
+.update-button,
+.add-button,
+.danger-button {
   min-height: 39px;
   border: 0;
   cursor: pointer;
@@ -123,7 +125,9 @@ button {
   font-size: 0.67rem;
 }
 
-.update-button {
+.update-button,
+.add-button,
+.danger-button {
   display: inline-flex;
   align-items: center;
   gap: 9px;
@@ -139,8 +143,31 @@ button {
     transform 360ms var(--ease);
 }
 
-.update-button:hover {
+.update-button:hover,
+.add-button:hover {
   background: var(--lime);
+  color: #070313;
+  transform: translateY(-2px);
+}
+
+.add-button {
+  border-color: rgba(53, 236, 255, 0.38);
+  background: rgba(53, 236, 255, 0.07);
+  color: var(--cyan);
+}
+
+.add-button:hover {
+  background: var(--cyan);
+}
+
+.danger-button {
+  border-color: rgba(255, 92, 124, 0.42);
+  background: rgba(255, 92, 124, 0.08);
+  color: #ff718f;
+}
+
+.danger-button:hover {
+  background: #ff718f;
   color: #070313;
   transform: translateY(-2px);
 }
@@ -552,7 +579,8 @@ button {
 }
 
 .task-meta a,
-.move-task-button {
+.move-task-button,
+.delete-task-button {
   padding: 0;
   border: 0;
   background: transparent;
@@ -562,13 +590,42 @@ button {
   transition: color 250ms var(--ease);
 }
 
-.move-task-button {
+.move-task-button,
+.delete-task-button {
   border-bottom: 1px solid color-mix(in srgb, var(--subject-color) 42%, transparent);
+}
+
+.delete-task-button {
+  border-color: rgba(255, 113, 143, 0.32);
 }
 
 .task-meta a:hover,
 .move-task-button:hover {
   color: var(--subject-color);
+}
+
+.delete-task-button:hover {
+  color: #ff718f;
+}
+
+.task-labels {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+}
+
+.manual-chip {
+  padding-left: 7px;
+  border-left: 1px solid color-mix(in srgb, var(--subject-color) 35%, transparent);
+  color: color-mix(in srgb, var(--subject-color) 68%, var(--muted));
+  font-size: 0.48rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.task.manual {
+  border-left-style: dashed;
 }
 
 .empty-state {
@@ -640,7 +697,9 @@ button {
   text-transform: uppercase;
 }
 
-.move-date-field select {
+.move-date-field select,
+.form-field input,
+.form-field select {
   width: 100%;
   min-height: 46px;
   padding: 0 13px;
@@ -649,7 +708,59 @@ button {
   color: var(--text);
   font: inherit;
   font-size: 0.72rem;
+}
+
+.move-date-field select,
+.form-field select {
   cursor: pointer;
+}
+
+.task-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.form-field {
+  display: grid;
+  gap: 8px;
+}
+
+.form-field--wide {
+  grid-column: 1 / -1;
+}
+
+.form-field > span {
+  color: var(--muted);
+  font-size: 0.6rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.minutes-field {
+  position: relative;
+}
+
+.minutes-field input {
+  padding-right: 48px;
+}
+
+.minutes-field small {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  color: var(--muted);
+  font-size: 0.58rem;
+  transform: translateY(-50%);
+}
+
+.dialog-mark--danger {
+  color: #ff718f;
+}
+
+.dialog-warning--danger {
+  border-left-color: #ff718f;
 }
 
 .toast {
@@ -684,6 +795,134 @@ select:focus-visible {
   outline-offset: 4px;
 }
 
+
+.deleted-section {
+  margin-top: 52px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.deleted-section__heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.deleted-section__heading p,
+.deleted-section__heading h2,
+.deleted-section__copy {
+  margin: 0;
+}
+
+.deleted-section__heading p {
+  margin-bottom: 4px;
+  color: #ff718f;
+  font-size: 0.58rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.deleted-section__heading h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 560;
+}
+
+.deleted-section__heading > span {
+  color: var(--muted);
+  font-size: 0.62rem;
+}
+
+.deleted-section__copy {
+  max-width: 720px;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.67rem;
+  line-height: 1.55;
+}
+
+.deleted-tasks {
+  display: grid;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.deleted-task {
+  --subject-color: var(--cyan);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  min-height: 76px;
+  padding: 13px 15px;
+  border-left: 2px solid color-mix(in srgb, var(--subject-color) 48%, transparent);
+  background: rgba(255, 255, 255, 0.018);
+  opacity: 0.72;
+  transition:
+    opacity 300ms var(--ease),
+    background 300ms var(--ease);
+}
+
+.deleted-task:hover {
+  background: rgba(255, 255, 255, 0.035);
+  opacity: 1;
+}
+
+.deleted-task__main {
+  min-width: 0;
+}
+
+.deleted-task__main strong,
+.deleted-task__main small {
+  display: block;
+}
+
+.deleted-task__main strong {
+  margin-top: 5px;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 560;
+}
+
+.deleted-task__main small {
+  margin-top: 3px;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.57rem;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.deleted-task__labels {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.deleted-task__meta {
+  display: grid;
+  justify-items: end;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.57rem;
+}
+
+.restore-task-button {
+  padding: 4px 0;
+  border: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--subject-color) 52%, transparent);
+  background: transparent;
+  color: var(--subject-color);
+  cursor: pointer;
+  font-size: 0.58rem;
+}
+
+.restore-task-button:hover {
+  color: var(--text);
+}
+
 @media (max-width: 760px) {
   .topbar {
     align-items: flex-start;
@@ -692,6 +931,7 @@ select:focus-visible {
 
   .topbar__actions {
     width: 100%;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
 
@@ -740,6 +980,36 @@ select:focus-visible {
 
   .task-main small {
     white-space: normal;
+  }
+
+  .task-labels {
+    justify-content: flex-start;
+  }
+
+  .task-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .deleted-section__heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .deleted-task {
+    grid-template-columns: 1fr;
+  }
+
+  .deleted-task__meta {
+    justify-items: start;
+  }
+
+  .deleted-task__main small {
+    white-space: normal;
+  }
+
+  .form-field--wide {
+    grid-column: auto;
   }
 
   .dialog-actions {
