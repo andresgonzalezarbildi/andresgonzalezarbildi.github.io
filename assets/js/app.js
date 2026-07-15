@@ -31,6 +31,22 @@ const LIBRARY = [
         ]
       },
       {
+        id: "plan-estudio",
+        title: "Plan de estudio",
+        description:
+          "Calendario unificado para organizar Arquitectura y Sistemas Operativos en una sola vista diaria.",
+        icon: "◷",
+        accent: "#fb923c",
+        tags: ["Calendario", "Checklist", "Organización"],
+        actions: [
+          {
+            label: "Abrir",
+            href: "/plan/",
+            kind: "web"
+          }
+        ]
+      },
+      {
         id: "so",
         title: "Sistemas Operativos",
         description:
@@ -56,6 +72,22 @@ const LIBRARY = [
       "Aplicaciones para resolver tareas concretas de trabajo y administración.",
     color: "#d8ff56",
     apps: [
+      {
+        id: "cashflow",
+        title: "Ca$hFlow",
+        description:
+          "Aplicación web sencilla para llevar cuentas personales, ingresos y gastos.",
+        icon: "$",
+        accent: "#34d399",
+        tags: ["Node.js", "Express", "MongoDB"],
+        actions: [
+          {
+            label: "Repositorio",
+            href: "https://github.com/andresgonzalezarbildi/CashFlowApp",
+            kind: "repo"
+          }
+        ]
+      },
       {
         id: "conciliapp",
         title: "Conciliapp",

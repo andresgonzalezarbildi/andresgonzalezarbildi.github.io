@@ -74,3 +74,11 @@ Se agregó una sección **Herramientas** con:
 - **Conciliapp**
 - Acceso: `/conciliapp/`
 - Uso: conciliación de movimientos contables provenientes de dos fuentes.
+
+
+## Versión v9
+
+Se agregaron:
+
+- **Plan de estudio** dentro de Estudio, con acceso a `/plan/`.
+- **Ca$hFlow** dentro de Herramientas, enlazado a su repositorio de GitHub.
