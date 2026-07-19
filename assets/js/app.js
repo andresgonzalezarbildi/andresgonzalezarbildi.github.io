@@ -18,7 +18,7 @@ const LIBRARY = [
         id: "arqui",
         title: "Arquitectura de Computadoras",
         description:
-          "Roadmap, tarjetas y ejercicios para preparar el examen.",
+          "Plataforma de estudio con roadmap, plan diario, ejercicios y herramientas de repaso para preparar el examen.",
         icon: "⌁",
         accent: "#d8ff56",
         tags: ["8086", "Roadmap", "Repaso"],
@@ -50,7 +50,7 @@ const LIBRARY = [
         id: "so",
         title: "Sistemas Operativos",
         description:
-          "Teórico, práctica y banco de preguntas organizado por tema.",
+          "Plataforma de estudio con roadmap, plan diario, ejercicios y herramientas de repaso para preparar el examen.",
         icon: "◫",
         accent: "#35ecff",
         tags: ["Archivos", "Memoria", "E/S"],
@@ -118,7 +118,7 @@ const LIBRARY = [
         id: "eventos-uy",
         title: "EventosUy",
         description:
-          "Sistema universitario para organizar eventos, gestionar asistencias y administrar organizadores, con componentes web y de escritorio.",
+          "Sistema para crear y gestionar eventos, ediciones, registros, asistencias y organizadores, con componentes web y de escritorio.",
         icon: "◈",
         accent: "#ff43d0",
         tags: ["Java 21", "Swing", "Tomcat"],
@@ -134,7 +134,7 @@ const LIBRARY = [
         id: "game-or-task",
         title: "GameOrTask",
         description:
-          "Reemplaza el acceso a un juego por un sorteo entre jugar o cumplir tareas, y conserva el resultado durante un tiempo para impedir repetir hasta ganar.",
+          "Reemplaza el recurso a un juego por un sorteo entre jugar o cumplir tareas, y conserva el resultado durante un tiempo para impedir repetir hasta ganar.",
         icon: "⚄",
         accent: "#ff8b2c",
         tags: ["Batch", "Automatización", "Hábitos"],
@@ -150,7 +150,7 @@ const LIBRARY = [
         id: "carloncho-stars",
         title: "carlonchoStars",
         description:
-          "Proyecto experimental enlazado al código mientras se prepara una presentación visual más cuidada.",
+          "Juego de cartas en el que el jugador apuesta a que una tercera carta quede estrictamente entre las dos primeras.",
         icon: "✦",
         accent: "#7752ff",
         tags: ["Experimento", "Interfaz"],
@@ -457,7 +457,7 @@ document.addEventListener("keydown", (event) => {
 });
 
 elements.totalApps.textContent =
-  allApps.length === 1 ? "1 acceso" : `${allApps.length} accesos`;
+  allApps.length === 1 ? "1 recurso" : `${allApps.length} recursos`;
 
 renderPersonalLinks();
 
