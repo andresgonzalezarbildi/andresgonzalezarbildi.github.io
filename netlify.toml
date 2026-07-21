@@ -29,6 +29,12 @@
   force = true
 
 [[redirects]]
+  from = "/masa"
+  to = "https://masaandresgonzalez.netlify.app/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/masa/*"
   to = "https://masaandresgonzalez.netlify.app/:splat"
   status = 200
