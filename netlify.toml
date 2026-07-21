@@ -1,5 +1,3 @@
-# CONCILIAPP
-
 [[redirects]]
   from = "/conciliapp"
   to = "https://conciliapps.netlify.app/index.html"
@@ -12,27 +10,9 @@
   status = 200
   force = true
 
-
-# SISTEMAS OPERATIVOS
-
-[[redirects]]
-  from = "/so"
-  to = "https://estudiofing.netlify.app/so/index.html"
-  status = 200
-  force = true
-
 [[redirects]]
   from = "/so/*"
   to = "https://estudiofing.netlify.app/so/:splat"
-  status = 200
-  force = true
-
-
-# ARQUITECTURA
-
-[[redirects]]
-  from = "/arqui"
-  to = "https://estudiofing.netlify.app/arqui/index.html"
   status = 200
   force = true
 
@@ -42,27 +22,9 @@
   status = 200
   force = true
 
-
-# PLAN
-
-[[redirects]]
-  from = "/plan"
-  to = "https://estudiofing.netlify.app/plan/index.html"
-  status = 200
-  force = true
-
 [[redirects]]
   from = "/plan/*"
   to = "https://estudiofing.netlify.app/plan/:splat"
-  status = 200
-  force = true
-
-
-# MASA
-
-[[redirects]]
-  from = "/masa"
-  to = "https://masaandresgonzalez.netlify.app/index.html"
   status = 200
   force = true
 
