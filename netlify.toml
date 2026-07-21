@@ -27,3 +27,9 @@
   to = "https://estudiofing.netlify.app/plan/:splat"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/masa/*"
+  to = "https://masaandresgonzalez.netlify.app/:splat"
+  status = 200
+  force = true
