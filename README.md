@@ -1,84 +1,40 @@
-# Portal personal — versión líquida v4
+# Personal Portfolio
 
-## Cambios
+A personal hub that brings together my web projects, study tools and practical applications in one place.
 
-- Fondo renderizado internamente a menor resolución y escalado por CSS.
-- Se eliminaron los desenfoques grandes por fotograma.
-- Las corrientes usan menos puntos y curvas cuadráticas.
-- El movimiento se mantiene constante.
-- Al pasar por una aplicación:
-  - las corrientes aceleran;
-  - se deforman alrededor del cursor;
-  - vuelven gradualmente al movimiento normal.
-- Se agregaron enlaces personales:
-  - GitHub
-  - LinkedIn
-  - CV reciente en inglés
-- Se agregaron:
-  - EventosUy
-  - GameOrTask
-  - carlonchoStars
-  - PruebaFight
-- Ningún repositorio tiene botón de descarga.
+**Link to project:** https://andresgonzalez.netlify.app/
 
-## carlonchoStars
+![portfolio screenshot](Portfolio%20screenshot.png)
 
-La portada enlaza el repositorio, pero no modifica ese proyecto.
+## How It's Made:
 
-Para rediseñarlo hace falta subir el repositorio como ZIP o adjuntar sus archivos
-HTML, CSS, JavaScript e imágenes. Así se puede modificar sin inventar su
-estructura ni romper su funcionamiento.
+**Tech used:** HTML, CSS, JavaScript
 
-## Editar aplicaciones
+I built this portfolio as a central place for projects that were previously spread across different repositories and deployments.
 
-Todo está en:
+The content is divided into three main areas: study platforms, practical tools and personal projects. Each card includes a short description, relevant technologies and links to the live project or repository.
 
-```text
-assets/js/app.js
-```
+Instead of writing every card directly in the HTML, the project information is stored in a JavaScript configuration object. The interface reads that data and generates the sections, cards, navigation and resource counter automatically. This makes it easier to add or edit projects without changing the page structure.
 
-- `LIBRARY`: grupos y proyectos.
-- `PERSONAL_LINKS`: GitHub, LinkedIn, CV u otros enlaces.
+I also added a search system, responsive layouts and a visual design that keeps the different types of projects separated without turning the page into a long traditional portfolio.
 
-## Archivos
+## Optimizations
 
-```text
-index.html
-assets/css/style.css
-assets/js/app.js
-favicon.png
-```
+The original version of my portfolio was a more conventional landing page and did not represent the variety of tools and applications I had built over time.
 
+I redesigned it as a data-driven hub, separating the project content from the HTML templates. This reduced repeated markup and made future updates much simpler.
 
-## Versión v5 — fondo marmolado
+The search, category navigation and project count are all generated from the same source of data, avoiding the need to update different parts of the interface manually whenever a new project is added.
 
-- Se reemplazaron las cuatro bandas anchas por seis cintas entrelazadas.
-- Cada cinta tiene varias vetas internas y filamentos finos.
-- Se agregaron remolinos localizados para acercarse al aspecto de pintura fluida.
-- El movimiento normal es más lento y continuo.
-- El hover modifica suavemente la curvatura, sin sustituir la animación propia.
-- Se mantiene el renderizado a resolución reducida y no se usan desenfoques por fotograma.
+## Possible Improvements
 
+- Move the project data into a separate JSON file.
+- Add project screenshots or previews inside each card.
+- Add filters by technology.
+- Add a small section for recently updated projects.
 
-## Versión v6
+## Lessons Learned:
 
-- El fondo tiene una difusión suave aplicada por CSS para mezclar las vetas como líquido y humo.
-- Se mantiene el renderizado optimizado de la versión anterior.
-- carlonchoStars incluye acceso directo a la versión jugable y al repositorio.
+This project helped me understand the value of separating content from presentation, even in a small static website.
 
-
-## Versión v7
-
-Se agregó una sección **Herramientas** con:
-
-- **Conciliapp**
-- Acceso: `/conciliapp/`
-- Uso: conciliación de movimientos contables provenientes de dos fuentes.
-
-
-## Versión v9
-
-Se agregaron:
-
-- **Plan de estudio** dentro de Estudio, con acceso a `/plan/`.
-- **Ca$hFlow** dentro de Herramientas, enlazado a su repositorio de GitHub.
+It also showed me that a portfolio does not need to follow a fixed format. In my case, organizing everything as a personal application hub represents my work better than a traditional page with only a few featured projects.
