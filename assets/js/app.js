@@ -73,6 +73,22 @@ const LIBRARY = [
     color: "#d8ff56",
     apps: [
       {
+        id: "masa",
+        title: "MASA",
+        description:
+          "Plataforma para analizar el peso corporal como un sistema medible, modelar tendencias y validar el balance energético con datos reales.",
+        icon: "∿",
+        accent: "#ff8b2c",
+        tags: ["Peso", "Tendencias", "Modelado"],
+        actions: [
+          {
+            label: "Abrir",
+            href: "/masa/",
+            kind: "web"
+          }
+        ]
+      },
+      {
         id: "cashflow",
         title: "Ca$hFlow",
         description:
