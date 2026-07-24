@@ -39,3 +39,15 @@
   to = "https://masaandresgonzalez.netlify.app/:splat"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/evita"
+  to = "https://evitapp.netlify.app/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/evita/*"
+  to = "https://evitapp.netlify.app/:splat"
+  status = 200
+  force = true
