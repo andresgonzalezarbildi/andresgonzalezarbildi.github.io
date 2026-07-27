@@ -30,8 +30,8 @@
 
 [[redirects]]
   from = "/masa"
-  to = "/masa/"
-  status = 301
+  to = "https://masaandresgonzalez.netlify.app/index.html"
+  status = 200
   force = true
 
 [[redirects]]
