@@ -11,8 +11,8 @@
   force = true
 
 [[redirects]]
-  from = "/so/*"
-  to = "https://estudiofing.netlify.app/so/:splat"
+  from = "/fbd/*"
+  to = "https://estudiofing.netlify.app/fbd/:splat"
   status = 200
   force = true
 
