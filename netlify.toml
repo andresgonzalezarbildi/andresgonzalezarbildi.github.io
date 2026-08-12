@@ -40,7 +40,13 @@
   to = "https://estudiofing.netlify.app/arqui/:splat"
   status = 200
   force = true
-
+  
+[[redirects]]
+  from = "/cerecito/*"
+  to = "https://cerecito.netlify.app/:splat"
+  status = 200
+  force = true
+  
 [[redirects]]
   from = "/plan/*"
   to = "https://estudiofing.netlify.app/plan/:splat"
