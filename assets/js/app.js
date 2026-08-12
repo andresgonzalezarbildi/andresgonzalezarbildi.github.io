@@ -156,7 +156,7 @@ const CONTENT = {
     personalLinks: [
       { title: "GitHub", description: "Código y repositorios", href: "https://github.com/andresgonzalezarbildi", color: "#35ecff" },
       { title: "LinkedIn", description: "Perfil profesional", href: "https://www.linkedin.com/in/andresgonzalezarbildi/", color: "#ff43d0" },
-      { title: "Currículum", description: "Versión reciente en inglés", href: "https://drive.google.com/file/d/1Vuv5h202UsZ_7ubXAAaVGon6wDnf_e1n/view?usp=sharing", color: "#d8ff56" }
+      { title: "Currículum", description: "Versión reciente en inglés", href: "https://drive.google.com/file/d/1FqBDjI88FY0f93qJJRE1RNN8cgBP8RAr/view?usp=sharing", color: "#d8ff56" }
     ]
   },
   en: {
