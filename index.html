@@ -18,12 +18,9 @@
     rel="stylesheet"
   >
 
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/app.js" defer></script>
-  <link rel="stylesheet" href="./styles.css">
-  <link rel="icon" type="image/png" href="/images/favicon.png">
-  <script defer src="./app.js"></script>
 </head>
 
 <body>
@@ -34,21 +31,33 @@
     <a class="brand" href="/" aria-label="Ir al inicio">
       <span class="brand__signal" aria-hidden="true"></span>
       <span>
-        <strong>Portal personal</strong>
+        <strong id="brandTitle">Portal personal</strong>
         <small id="totalApps">0 recursos</small>
       </span>
     </a>
 
-    <label class="searchbar">
-      <span aria-hidden="true">⌕</span>
-      <input
-        id="searchInput"
-        type="search"
-        placeholder="Buscar..."
-        autocomplete="off"
+    <div class="topbar__tools">
+      <label class="searchbar">
+        <span aria-hidden="true">⌕</span>
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Buscar..."
+          autocomplete="off"
+        >
+        <kbd>/</kbd>
+      </label>
+
+      <button
+        class="language-toggle"
+        id="languageToggle"
+        type="button"
+        aria-label="Cambiar idioma a inglés"
+        title="Cambiar idioma a inglés"
       >
-      <kbd>/</kbd>
-    </label>
+        <span id="languageFlag" aria-hidden="true">🇪🇸</span>
+      </button>
+    </div>
   </header>
 
   <main class="shell">
@@ -64,13 +73,13 @@
     <section id="groupRoot" class="groups"></section>
 
     <section class="empty-state" id="emptyState" hidden>
-      <strong>No encontré resultados.</strong>
-      <p>Probá con otra palabra.</p>
+      <strong id="emptyTitle">No encontré resultados.</strong>
+      <p id="emptyText">Probá con otra palabra.</p>
     </section>
 
     <section class="personal-links" aria-labelledby="personalLinksTitle">
       <header class="personal-links__header">
-        <span>Enlaces</span>
+        <span id="personalLinksEyebrow">Enlaces</span>
         <h2 id="personalLinksTitle">Dónde encontrarme</h2>
       </header>
 

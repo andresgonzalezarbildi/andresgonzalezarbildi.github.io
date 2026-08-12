@@ -160,6 +160,38 @@ button {
   font-size: 0.68rem;
 }
 
+.topbar__tools {
+  display: flex;
+  width: min(540px, 61vw);
+  align-items: center;
+  justify-content: flex-end;
+  gap: 13px;
+}
+
+.language-toggle {
+  display: grid;
+  width: 46px;
+  height: 44px;
+  flex: 0 0 46px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.018);
+  cursor: pointer;
+  font-size: 1.35rem;
+  line-height: 1;
+  transition:
+    border-color 360ms var(--ease-soft),
+    background 360ms var(--ease-soft),
+    transform 360ms var(--ease-out);
+}
+
+.language-toggle:hover {
+  border-color: var(--cyan);
+  background: rgba(24, 17, 56, 0.47);
+  transform: translateY(-2px);
+}
+
 .searchbar {
   display: grid;
   width: min(470px, 53vw);
@@ -806,6 +838,10 @@ input:focus-visible {
     flex-direction: column;
     align-items: stretch;
     padding-inline: 15px;
+  }
+
+  .topbar__tools {
+    width: 100%;
   }
 
   .searchbar {

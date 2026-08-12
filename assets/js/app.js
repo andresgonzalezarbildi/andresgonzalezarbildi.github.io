@@ -1,233 +1,323 @@
 /*
-  Toda la portada se configura desde LIBRARY y PERSONAL_LINKS.
+  Toda la portada se configura desde CONTENT.
+  Cada idioma comparte los mismos ids, colores, enlaces e iconos.
 
   kind:
   - "web": aplicación o sitio.
   - "repo": repositorio de GitHub.
 */
-const LIBRARY = [
-  {
-    id: "estudio",
-    eyebrow: "Facultad y aprendizaje",
-    title: "Estudio",
-    description:
-      "Materias, roadmaps, bancos de ejercicios y herramientas de preparación.",
-    color: "#35ecff",
-    apps: [
+const CONTENT = {
+  es: {
+    ui: {
+      pageTitle: "Portal personal",
+      metaDescription: "Portal personal de aplicaciones, herramientas y material de estudio.",
+      brand: "Portal personal",
+      resourceSingular: "recurso",
+      resourcePlural: "recursos",
+      searchPlaceholder: "Buscar...",
+      navLinks: "Enlaces",
+      showingAll: "Mostrando todo",
+      oneResult: (query) => `1 resultado para "${query}"`,
+      manyResults: (count, query) => `${count} resultados para "${query}"`,
+      clear: "Limpiar",
+      emptyTitle: "No encontré resultados.",
+      emptyText: "Probá con otra palabra.",
+      personalLinksEyebrow: "Enlaces",
+      personalLinksTitle: "Dónde encontrarme",
+      homeAria: "Ir al inicio",
+      quickNavAria: "Navegación por grupos",
+      languageAria: "Cambiar idioma a inglés"
+    },
+    library: [
       {
-        id: "arqui",
-        title: "Arquitectura de Computadoras",
-        description:
-          "Plataforma de estudio con roadmap, plan diario, ejercicios y herramientas de repaso para preparar el examen.",
-        icon: "⌁",
-        accent: "#d8ff56",
-        tags: ["8086", "Roadmap", "Repaso"],
-        actions: [
+        id: "estudio",
+        eyebrow: "Facultad y aprendizaje",
+        title: "Estudio",
+        description: "Materias, roadmaps, bancos de ejercicios y herramientas de preparación.",
+        color: "#35ecff",
+        apps: [
           {
-            label: "Abrir",
-            href: "/arqui/",
-            kind: "web"
-          }
-        ]
-      },
-      {
-        id: "plan-estudio",
-        title: "Plan de estudio",
-        description:
-          "Calendario unificado para organizar Arquitectura y Sistemas Operativos en una sola vista diaria.",
-        icon: "◷",
-        accent: "#fb923c",
-        tags: ["Calendario", "Checklist", "Organización"],
-        actions: [
-          {
-            label: "Abrir",
-            href: "/plan/",
-            kind: "web"
-          }
-        ]
-      },
-      {
-        id: "so",
-        title: "Sistemas Operativos",
-        description:
-          "Plataforma de estudio con roadmap, plan diario, ejercicios y herramientas de repaso para preparar el examen.",
-        icon: "◫",
-        accent: "#35ecff",
-        tags: ["Archivos", "Memoria", "E/S"],
-        actions: [
-          {
-            label: "Abrir",
-            href: "/so/",
-            kind: "web"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: "herramientas",
-    eyebrow: "Trabajo y organización",
-    title: "Herramientas",
-    description:
-      "Aplicaciones para resolver tareas concretas de trabajo y administración.",
-    color: "#d8ff56",
-    apps: [
-      {
-        id: "masa",
-        title: "MASA",
-        description:
-          "Plataforma para analizar el peso corporal como un sistema medible, modelar tendencias y validar el balance energético con datos reales.",
-        icon: "∿",
-        accent: "#ff8b2c",
-        tags: ["Peso", "Tendencias", "Modelado"],
-        actions: [
-          {
-            label: "Abrir",
-            href: "/masa/",
-            kind: "web"
-          }
-        ]
-      },
-      {
-        id: "cashflow",
-        title: "Ca$hFlow",
-        description:
-          "Aplicación web sencilla para llevar cuentas personales, ingresos y gastos.",
-        icon: "$",
-        accent: "#34d399",
-        tags: ["Node.js", "Express", "MongoDB"],
-        actions: [
-          {
-            label: "Repositorio",
-            href: "https://github.com/andresgonzalezarbildi/CashFlowApp",
-            kind: "repo"
-          }
-        ]
-      },
-      {
-        id: "conciliapp",
-        title: "Conciliapp",
-        description:
-          "Herramienta contable para conciliar movimientos provenientes de dos fuentes, detectar coincidencias y revisar los registros pendientes.",
-        icon: "⇄",
-        accent: "#d8ff56",
-        tags: ["Contabilidad", "Conciliación", "Excel"],
-        actions: [
-          {
-            label: "Abrir",
-            href: "/conciliapp/",
-            kind: "web"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: "proyectos",
-    eyebrow: "Aplicaciones y experimentos",
-    title: "Proyectos",
-    description:
-      "Herramientas, trabajos universitarios y proyectos que viven fuera de esta portada.",
-    color: "#ff43d0",
-    apps: [
-      {
-        id: "eventos-uy",
-        title: "EventosUy",
-        description:
-          "Sistema para crear y gestionar eventos, ediciones, registros, asistencias y organizadores, con componentes web y de escritorio.",
-        icon: "◈",
-        accent: "#ff43d0",
-        tags: ["Java 21", "Swing", "Tomcat"],
-        actions: [
-          {
-            label: "Repositorio",
-            href: "https://github.com/andresgonzalezarbildi/EventosUy",
-            kind: "repo"
-          }
-        ]
-      },
-      {
-        id: "game-or-task",
-        title: "GameOrTask",
-        description:
-          "Reemplaza el recurso a un juego por un sorteo entre jugar o cumplir tareas, y conserva el resultado durante un tiempo para impedir repetir hasta ganar.",
-        icon: "⚄",
-        accent: "#ff8b2c",
-        tags: ["Batch", "Automatización", "Hábitos"],
-        actions: [
-          {
-            label: "Repositorio",
-            href: "https://github.com/andresgonzalezarbildi/GameOrTask",
-            kind: "repo"
-          }
-        ]
-      },
-      {
-        id: "carloncho-stars",
-        title: "carlonchoStars",
-        description:
-          "Juego de cartas en el que el jugador apuesta a que una tercera carta quede estrictamente entre las dos primeras.",
-        icon: "✦",
-        accent: "#7752ff",
-        tags: ["Experimento", "Interfaz"],
-        actions: [
-          {
-            label: "Jugar",
-            href: "https://andresgonzalezarbildi.github.io/carlonchoStars/",
-            kind: "web"
+            id: "arqui",
+            title: "Arquitectura de Computadoras",
+            description: "Plataforma de estudio con roadmap, plan diario, ejercicios y herramientas de repaso para preparar el examen.",
+            icon: "⌁",
+            accent: "#d8ff56",
+            tags: ["8086", "Roadmap", "Repaso"],
+            actions: [{ label: "Abrir", href: "/arqui/", kind: "web" }]
           },
           {
-            label: "Repositorio",
-            href: "https://github.com/andresgonzalezarbildi/carlonchoStars",
-            kind: "repo"
+            id: "plan-estudio",
+            title: "Plan de estudio",
+            description: "Calendario unificado para organizar Arquitectura y Sistemas Operativos en una sola vista diaria.",
+            icon: "◷",
+            accent: "#fb923c",
+            tags: ["Calendario", "Checklist", "Organización"],
+            actions: [{ label: "Abrir", href: "/plan/", kind: "web" }]
+          },
+          {
+            id: "so",
+            title: "Sistemas Operativos",
+            description: "Plataforma de estudio con roadmap, plan diario, ejercicios y herramientas de repaso para preparar el examen.",
+            icon: "◫",
+            accent: "#35ecff",
+            tags: ["Archivos", "Memoria", "E/S"],
+            actions: [{ label: "Abrir", href: "/so/", kind: "web" }]
           }
         ]
       },
       {
-        id: "prueba-fight",
-        title: "PruebaFight",
-        description:
-          "Sitio estático creado para un gimnasio local de acuerdo con los requerimientos del cliente.",
-        icon: "◇",
-        accent: "#35ecff",
-        tags: ["HTML", "CSS", "JavaScript"],
-        actions: [
+        id: "herramientas",
+        eyebrow: "Trabajo y organización",
+        title: "Herramientas",
+        description: "Aplicaciones para resolver tareas concretas de trabajo y administración.",
+        color: "#d8ff56",
+        apps: [
           {
-            label: "Ver sitio",
-            href: "https://pruebafight.netlify.app",
-            kind: "web"
+            id: "masa",
+            title: "MASA",
+            description: "Plataforma para analizar el peso corporal como un sistema medible, modelar tendencias y validar el balance energético con datos reales.",
+            icon: "∿",
+            accent: "#ff8b2c",
+            tags: ["Peso", "Tendencias", "Modelado"],
+            actions: [{ label: "Abrir", href: "/masa/", kind: "web" }]
           },
           {
-            label: "Repositorio",
-            href: "https://github.com/andresgonzalezarbildi/PruebaFight",
-            kind: "repo"
+            id: "cashflow",
+            title: "Ca$hFlow",
+            description: "Aplicación web sencilla para llevar cuentas personales, ingresos y gastos.",
+            icon: "$",
+            accent: "#34d399",
+            tags: ["Node.js", "Express", "MongoDB"],
+            actions: [{ label: "Repositorio", href: "https://github.com/andresgonzalezarbildi/CashFlowApp", kind: "repo" }]
+          },
+          {
+            id: "conciliapp",
+            title: "Conciliapp",
+            description: "Herramienta contable para conciliar movimientos provenientes de dos fuentes, detectar coincidencias y revisar los registros pendientes.",
+            icon: "⇄",
+            accent: "#d8ff56",
+            tags: ["Contabilidad", "Conciliación", "Excel"],
+            actions: [{ label: "Abrir", href: "/conciliapp/", kind: "web" }]
+          }
+        ]
+      },
+      {
+        id: "proyectos",
+        eyebrow: "Aplicaciones y experimentos",
+        title: "Proyectos",
+        description: "Herramientas, trabajos universitarios y proyectos que viven fuera de esta portada.",
+        color: "#ff43d0",
+        apps: [
+          {
+            id: "eventos-uy",
+            title: "EventosUy",
+            description: "Sistema para crear y gestionar eventos, ediciones, registros, asistencias y organizadores, con componentes web y de escritorio.",
+            icon: "◈",
+            accent: "#ff43d0",
+            tags: ["Java 21", "Swing", "Tomcat"],
+            actions: [{ label: "Repositorio", href: "https://github.com/andresgonzalezarbildi/EventosUy", kind: "repo" }]
+          },
+          {
+            id: "game-or-task",
+            title: "GameOrTask",
+            description: "Reemplaza el recurso a un juego por un sorteo entre jugar o cumplir tareas, y conserva el resultado durante un tiempo para impedir repetir hasta ganar.",
+            icon: "⚄",
+            accent: "#ff8b2c",
+            tags: ["Batch", "Automatización", "Hábitos"],
+            actions: [{ label: "Repositorio", href: "https://github.com/andresgonzalezarbildi/GameOrTask", kind: "repo" }]
+          },
+          {
+            id: "carloncho-stars",
+            title: "carlonchoStars",
+            description: "Juego de cartas en el que el jugador apuesta a que una tercera carta quede estrictamente entre las dos primeras.",
+            icon: "✦",
+            accent: "#7752ff",
+            tags: ["Experimento", "Interfaz"],
+            actions: [
+              { label: "Jugar", href: "https://andresgonzalezarbildi.github.io/carlonchoStars/", kind: "web" },
+              { label: "Repositorio", href: "https://github.com/andresgonzalezarbildi/carlonchoStars", kind: "repo" }
+            ]
+          },
+          {
+            id: "prueba-fight",
+            title: "PruebaFight",
+            description: "Sitio estático creado para un gimnasio local de acuerdo con los requerimientos del cliente.",
+            icon: "◇",
+            accent: "#35ecff",
+            tags: ["HTML", "CSS", "JavaScript"],
+            actions: [
+              { label: "Ver sitio", href: "https://pruebafight.netlify.app", kind: "web" },
+              { label: "Repositorio", href: "https://github.com/andresgonzalezarbildi/PruebaFight", kind: "repo" }
+            ]
           }
         ]
       }
+    ],
+    personalLinks: [
+      { title: "GitHub", description: "Código y repositorios", href: "https://github.com/andresgonzalezarbildi", color: "#35ecff" },
+      { title: "LinkedIn", description: "Perfil profesional", href: "https://www.linkedin.com/in/andresgonzalezarbildi/", color: "#ff43d0" },
+      { title: "Currículum", description: "Versión reciente en inglés", href: "https://drive.google.com/file/d/1Vuv5h202UsZ_7ubXAAaVGon6wDnf_e1n/view?usp=sharing", color: "#d8ff56" }
+    ]
+  },
+  en: {
+    ui: {
+      pageTitle: "Personal Hub",
+      metaDescription: "Personal hub for applications, tools and study resources.",
+      brand: "Personal Hub",
+      resourceSingular: "resource",
+      resourcePlural: "resources",
+      searchPlaceholder: "Search...",
+      navLinks: "Links",
+      showingAll: "Showing all",
+      oneResult: (query) => `1 result for "${query}"`,
+      manyResults: (count, query) => `${count} results for "${query}"`,
+      clear: "Clear",
+      emptyTitle: "No results found.",
+      emptyText: "Try another search term.",
+      personalLinksEyebrow: "Links",
+      personalLinksTitle: "Where to find me",
+      homeAria: "Go to home page",
+      quickNavAria: "Group navigation",
+      languageAria: "Switch language to Spanish"
+    },
+    library: [
+      {
+        id: "estudio",
+        eyebrow: "University & learning",
+        title: "Study",
+        description: "Courses, roadmaps, exercise banks and preparation tools.",
+        color: "#35ecff",
+        apps: [
+          {
+            id: "arqui",
+            title: "Computer Architecture",
+            description: "Study platform with a roadmap, daily plan, exercises and review tools for exam preparation.",
+            icon: "⌁",
+            accent: "#d8ff56",
+            tags: ["8086", "Roadmap", "Review"],
+            actions: [{ label: "Open", href: "/arqui/", kind: "web" }]
+          },
+          {
+            id: "plan-estudio",
+            title: "Study Plan",
+            description: "Unified calendar for organizing Computer Architecture and Operating Systems in a single daily view.",
+            icon: "◷",
+            accent: "#fb923c",
+            tags: ["Calendar", "Checklist", "Organization"],
+            actions: [{ label: "Open", href: "/plan/", kind: "web" }]
+          },
+          {
+            id: "so",
+            title: "Operating Systems",
+            description: "Study platform with a roadmap, daily plan, exercises and review tools for exam preparation.",
+            icon: "◫",
+            accent: "#35ecff",
+            tags: ["Files", "Memory", "I/O"],
+            actions: [{ label: "Open", href: "/so/", kind: "web" }]
+          }
+        ]
+      },
+      {
+        id: "herramientas",
+        eyebrow: "Work & organization",
+        title: "Tools",
+        description: "Applications built to solve specific work and administrative tasks.",
+        color: "#d8ff56",
+        apps: [
+          {
+            id: "masa",
+            title: "MASA",
+            description: "Platform for analyzing body weight as a measurable system, modeling trends and validating energy balance with real data.",
+            icon: "∿",
+            accent: "#ff8b2c",
+            tags: ["Weight", "Trends", "Modeling"],
+            actions: [{ label: "Open", href: "/masa/", kind: "web" }]
+          },
+          {
+            id: "cashflow",
+            title: "Ca$hFlow",
+            description: "Simple web application for tracking personal accounts, income and expenses.",
+            icon: "$",
+            accent: "#34d399",
+            tags: ["Node.js", "Express", "MongoDB"],
+            actions: [{ label: "Repository", href: "https://github.com/andresgonzalezarbildi/CashFlowApp", kind: "repo" }]
+          },
+          {
+            id: "conciliapp",
+            title: "Conciliapp",
+            description: "Accounting tool for reconciling transactions from two sources, detecting matches and reviewing pending records.",
+            icon: "⇄",
+            accent: "#d8ff56",
+            tags: ["Accounting", "Reconciliation", "Excel"],
+            actions: [{ label: "Open", href: "/conciliapp/", kind: "web" }]
+          }
+        ]
+      },
+      {
+        id: "proyectos",
+        eyebrow: "Applications & experiments",
+        title: "Projects",
+        description: "Tools, university work and projects hosted outside this home page.",
+        color: "#ff43d0",
+        apps: [
+          {
+            id: "eventos-uy",
+            title: "EventosUy",
+            description: "System for creating and managing events, editions, registrations, attendance and organizers, with web and desktop components.",
+            icon: "◈",
+            accent: "#ff43d0",
+            tags: ["Java 21", "Swing", "Tomcat"],
+            actions: [{ label: "Repository", href: "https://github.com/andresgonzalezarbildi/EventosUy", kind: "repo" }]
+          },
+          {
+            id: "game-or-task",
+            title: "GameOrTask",
+            description: "Replaces the impulse to open a game with a random choice between playing or completing tasks, then keeps the result for a while to prevent rerolling until winning.",
+            icon: "⚄",
+            accent: "#ff8b2c",
+            tags: ["Batch", "Automation", "Habits"],
+            actions: [{ label: "Repository", href: "https://github.com/andresgonzalezarbildi/GameOrTask", kind: "repo" }]
+          },
+          {
+            id: "carloncho-stars",
+            title: "carlonchoStars",
+            description: "Card game where the player bets that a third card will fall strictly between the first two.",
+            icon: "✦",
+            accent: "#7752ff",
+            tags: ["Experiment", "Interface"],
+            actions: [
+              { label: "Play", href: "https://andresgonzalezarbildi.github.io/carlonchoStars/", kind: "web" },
+              { label: "Repository", href: "https://github.com/andresgonzalezarbildi/carlonchoStars", kind: "repo" }
+            ]
+          },
+          {
+            id: "prueba-fight",
+            title: "PruebaFight",
+            description: "Static website created for a local gym according to the client's requirements.",
+            icon: "◇",
+            accent: "#35ecff",
+            tags: ["HTML", "CSS", "JavaScript"],
+            actions: [
+              { label: "View site", href: "https://pruebafight.netlify.app", kind: "web" },
+              { label: "Repository", href: "https://github.com/andresgonzalezarbildi/PruebaFight", kind: "repo" }
+            ]
+          }
+        ]
+      }
+    ],
+    personalLinks: [
+      { title: "GitHub", description: "Code & repositories", href: "https://github.com/andresgonzalezarbildi", color: "#35ecff" },
+      { title: "LinkedIn", description: "Professional profile", href: "https://www.linkedin.com/in/andresgonzalezarbildi/", color: "#ff43d0" },
+      { title: "Résumé", description: "Latest English version", href: "https://drive.google.com/file/d/1Vuv5h202UsZ_7ubXAAaVGon6wDnf_e1n/view?usp=sharing", color: "#d8ff56" }
     ]
   }
-];
+};
 
-const PERSONAL_LINKS = [
-  {
-    title: "GitHub",
-    description: "Código y repositorios",
-    href: "https://github.com/andresgonzalezarbildi",
-    color: "#35ecff"
-  },
-  {
-    title: "LinkedIn",
-    description: "Perfil profesional",
-    href: "https://www.linkedin.com/in/andresgonzalezarbildi/",
-    color: "#ff43d0"
-  },
-  {
-    title: "Currículum",
-    description: "Versión reciente en inglés",
-    href: "https://drive.google.com/file/d/1Vuv5h202UsZ_7ubXAAaVGon6wDnf_e1n/view?usp=sharing",
-    color: "#d8ff56"
-  }
-];
+let currentLanguage = localStorage.getItem("portalLanguage") === "en" ? "en" : "es";
+
+function getContent() {
+  return CONTENT[currentLanguage];
+}
 
 const destinationSymbols = {
   web: "↗",
@@ -242,33 +332,35 @@ const elements = {
   searchInput: document.querySelector("#searchInput"),
   clearSearch: document.querySelector("#clearSearch"),
   emptyState: document.querySelector("#emptyState"),
+  emptyTitle: document.querySelector("#emptyTitle"),
+  emptyText: document.querySelector("#emptyText"),
   resultLabel: document.querySelector("#resultLabel"),
   totalApps: document.querySelector("#totalApps"),
   personalLinks: document.querySelector("#personalLinks"),
+  personalLinksEyebrow: document.querySelector("#personalLinksEyebrow"),
+  personalLinksTitle: document.querySelector("#personalLinksTitle"),
+  brandTitle: document.querySelector("#brandTitle"),
+  brand: document.querySelector(".brand"),
+  languageToggle: document.querySelector("#languageToggle"),
+  languageFlag: document.querySelector("#languageFlag"),
+  metaDescription: document.querySelector('meta[name="description"]'),
   canvas: document.querySelector("#fluidCanvas")
 };
 
-const allApps = LIBRARY.flatMap((group) =>
-  group.apps.map((app) => ({
-    ...app,
-    groupTitle: group.title,
-    groupId: group.id
-  }))
-);
-
 function normalize(text) {
   return text
-    .toLocaleLowerCase("es")
+    .toLocaleLowerCase(currentLanguage)
     .normalize("NFD")
     .replace(/\p{Diacritic}/gu, "");
 }
 
 function filterLibrary(query) {
-  if (!query) return LIBRARY;
+  const library = getContent().library;
+  if (!query) return library;
 
   const normalized = normalize(query);
 
-  return LIBRARY
+  return library
     .map((group) => ({
       ...group,
       apps: group.apps.filter((app) =>
@@ -300,7 +392,7 @@ function renderQuickNav(groups) {
 
   const personalLink = document.createElement("a");
   personalLink.href = "#personal-links";
-  personalLink.textContent = "Enlaces";
+  personalLink.textContent = getContent().ui.navLinks;
   personalLink.dataset.index = String(groups.length + 1).padStart(2, "0");
   personalLink.style.setProperty("--nav-color", "#d8ff56");
   elements.quickNav.append(personalLink);
@@ -395,13 +487,14 @@ function renderGroups(groups, query) {
   elements.emptyState.hidden = visibleCount !== 0;
   elements.groupRoot.hidden = visibleCount === 0;
 
+  const ui = getContent().ui;
+
   if (!query) {
-    elements.resultLabel.textContent = "Mostrando todo";
+    elements.resultLabel.textContent = ui.showingAll;
   } else if (visibleCount === 1) {
-    elements.resultLabel.textContent = `1 resultado para "${query}"`;
+    elements.resultLabel.textContent = ui.oneResult(query);
   } else {
-    elements.resultLabel.textContent =
-      `${visibleCount} resultados para "${query}"`;
+    elements.resultLabel.textContent = ui.manyResults(visibleCount, query);
   }
 
   elements.clearSearch.hidden = !query;
@@ -410,7 +503,7 @@ function renderGroups(groups, query) {
 function renderPersonalLinks() {
   elements.personalLinks.replaceChildren();
 
-  PERSONAL_LINKS.forEach((item) => {
+  getContent().personalLinks.forEach((item) => {
     const link = document.createElement("a");
     link.className = "personal-link";
     link.href = item.href;
@@ -436,7 +529,7 @@ function renderPersonalLinks() {
 
 function render(query = "") {
   const groups = filterLibrary(query);
-  renderQuickNav(query ? groups : LIBRARY);
+  renderQuickNav(query ? groups : getContent().library);
   renderGroups(groups, query);
 }
 
@@ -472,10 +565,43 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-elements.totalApps.textContent =
-  allApps.length === 1 ? "1 recurso" : `${allApps.length} recursos`;
+function applyLanguage() {
+  const content = getContent();
+  const ui = content.ui;
+  const appCount = content.library.reduce(
+    (total, group) => total + group.apps.length,
+    0
+  );
 
-renderPersonalLinks();
+  document.documentElement.lang = currentLanguage;
+  document.title = ui.pageTitle;
+  elements.metaDescription.content = ui.metaDescription;
+  elements.brandTitle.textContent = ui.brand;
+  elements.brand.setAttribute("aria-label", ui.homeAria);
+  elements.searchInput.placeholder = ui.searchPlaceholder;
+  elements.quickNav.setAttribute("aria-label", ui.quickNavAria);
+  elements.clearSearch.textContent = ui.clear;
+  elements.emptyTitle.textContent = ui.emptyTitle;
+  elements.emptyText.textContent = ui.emptyText;
+  elements.personalLinksEyebrow.textContent = ui.personalLinksEyebrow;
+  elements.personalLinksTitle.textContent = ui.personalLinksTitle;
+  elements.languageFlag.textContent = currentLanguage === "es" ? "🇪🇸" : "🇬🇧";
+  elements.languageToggle.setAttribute("aria-label", ui.languageAria);
+  elements.languageToggle.title = ui.languageAria;
+  elements.totalApps.textContent =
+    appCount === 1
+      ? `1 ${ui.resourceSingular}`
+      : `${appCount} ${ui.resourcePlural}`;
+
+  renderPersonalLinks();
+  render(elements.searchInput.value.trim());
+}
+
+elements.languageToggle.addEventListener("click", () => {
+  currentLanguage = currentLanguage === "es" ? "en" : "es";
+  localStorage.setItem("portalLanguage", currentLanguage);
+  applyLanguage();
+});
 
 /* ==============================
    Fondo fluido marmolado
@@ -927,6 +1053,6 @@ window.addEventListener("pointerleave", () => {
 
 window.addEventListener("resize", resizeCanvas);
 
-render();
+applyLanguage();
 resizeCanvas();
 requestAnimationFrame(animateFluid);
